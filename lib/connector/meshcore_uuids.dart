@@ -8,6 +8,7 @@ class MeshCoreUuids {
   /// that community forks with custom names are still found); kept for
   /// reference and possible future display heuristics.
   static const List<String> deviceNamePrefixes = [
+    "HamCore-",
     "MeshCore-",
     "Whisper-",
     "WisCore-",

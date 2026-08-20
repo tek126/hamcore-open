@@ -133,7 +133,7 @@ abstract class AppLocalizations {
   /// No description provided for @appTitle.
   ///
   /// In en, this message translates to:
-  /// **'MeshCore Open'**
+  /// **'HamCore Open'**
   String get appTitle;
 
   /// No description provided for @nav_contacts.
@@ -379,7 +379,7 @@ abstract class AppLocalizations {
   /// No description provided for @scanner_title.
   ///
   /// In en, this message translates to:
-  /// **'MeshCore Open'**
+  /// **'HamCore Open'**
   String get scanner_title;
 
   /// No description provided for @connectionChoiceUsbLabel.
@@ -481,7 +481,7 @@ abstract class AppLocalizations {
   /// No description provided for @usbScreenSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Choose a detected serial device and connect directly to your MeshCore node.'**
+  /// **'Choose a detected serial device and connect directly to your HamCore node.'**
   String get usbScreenSubtitle;
 
   /// No description provided for @usbScreenStatus.
@@ -637,13 +637,13 @@ abstract class AppLocalizations {
   /// No description provided for @scanner_searchingDevices.
   ///
   /// In en, this message translates to:
-  /// **'Searching for MeshCore devices...'**
+  /// **'Searching for HamCore devices...'**
   String get scanner_searchingDevices;
 
   /// No description provided for @scanner_tapToScan.
   ///
   /// In en, this message translates to:
-  /// **'Tap Scan to find MeshCore devices'**
+  /// **'Tap Scan to find HamCore devices'**
   String get scanner_tapToScan;
 
   /// No description provided for @scanner_connectionFailed.
@@ -709,7 +709,7 @@ abstract class AppLocalizations {
   /// No description provided for @device_meshcore.
   ///
   /// In en, this message translates to:
-  /// **'MeshCore'**
+  /// **'HamCore'**
   String get device_meshcore;
 
   /// No description provided for @settings_title.
@@ -1129,7 +1129,7 @@ abstract class AppLocalizations {
   /// No description provided for @settings_rebootDeviceSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Restart the MeshCore device'**
+  /// **'Restart the HamCore device'**
   String get settings_rebootDeviceSubtitle;
 
   /// No description provided for @settings_rebootDeviceConfirm.
@@ -1177,19 +1177,19 @@ abstract class AppLocalizations {
   /// No description provided for @settings_aboutVersion.
   ///
   /// In en, this message translates to:
-  /// **'MeshCore Open v{version}'**
+  /// **'HamCore Open v{version}'**
   String settings_aboutVersion(String version);
 
   /// No description provided for @settings_aboutLegalese.
   ///
   /// In en, this message translates to:
-  /// **'2026 MeshCore Open Source Project'**
+  /// **'2026 HamCore Open Source Project'**
   String get settings_aboutLegalese;
 
   /// No description provided for @settings_aboutDescription.
   ///
   /// In en, this message translates to:
-  /// **'An open-source Flutter client for MeshCore LoRa mesh networking devices.'**
+  /// **'An open-source Flutter client for HamCore LoRa mesh networking devices.'**
   String get settings_aboutDescription;
 
   /// No description provided for @settings_aboutOpenMeteoAttribution.
@@ -1267,13 +1267,13 @@ abstract class AppLocalizations {
   /// No description provided for @settings_frequencyHelper.
   ///
   /// In en, this message translates to:
-  /// **'300.0 - 2500.0'**
+  /// **'420-450 / 902-928'**
   String get settings_frequencyHelper;
 
   /// No description provided for @settings_frequencyInvalid.
   ///
   /// In en, this message translates to:
-  /// **'Invalid frequency (300-2500 MHz)'**
+  /// **'Invalid frequency (420-450 / 902-928 MHz)'**
   String get settings_frequencyInvalid;
 
   /// No description provided for @settings_bandwidth.
@@ -1327,7 +1327,7 @@ abstract class AppLocalizations {
   /// No description provided for @settings_clientRepeatFreqWarning.
   ///
   /// In en, this message translates to:
-  /// **'Off-grid repeat requires 433, 869, or 918 MHz frequency'**
+  /// **'Off-grid repeat requires 420-450 / 902-928 MHz frequency'**
   String get settings_clientRepeatFreqWarning;
 
   /// No description provided for @settings_error.
@@ -4523,7 +4523,7 @@ abstract class AppLocalizations {
   /// No description provided for @repeater_frequencyHelper.
   ///
   /// In en, this message translates to:
-  /// **'300-2500 MHz'**
+  /// **'420-450 / 902-928 MHz'**
   String get repeater_frequencyHelper;
 
   /// No description provided for @repeater_txPower.
@@ -7381,7 +7381,7 @@ abstract class AppLocalizations {
   /// No description provided for @notification_activityTitle.
   ///
   /// In en, this message translates to:
-  /// **'MeshCore Activity'**
+  /// **'HamCore Activity'**
   String get notification_activityTitle;
 
   /// No description provided for @notification_messagesCount.
@@ -7495,13 +7495,13 @@ abstract class AppLocalizations {
   /// No description provided for @settings_gpxExportShareText.
   ///
   /// In en, this message translates to:
-  /// **'Map data exported from meshcore-open'**
+  /// **'Map data exported from hamcore-open'**
   String get settings_gpxExportShareText;
 
   /// No description provided for @settings_gpxExportShareSubject.
   ///
   /// In en, this message translates to:
-  /// **'meshcore-open GPX map data export'**
+  /// **'hamcore-open GPX map data export'**
   String get settings_gpxExportShareSubject;
 
   /// No description provided for @snrIndicator_nearByRepeaters.
@@ -8053,7 +8053,7 @@ abstract class AppLocalizations {
   /// No description provided for @background_serviceTitle.
   ///
   /// In en, this message translates to:
-  /// **'MeshCore running'**
+  /// **'HamCore running'**
   String get background_serviceTitle;
 
   /// No description provided for @background_serviceText.

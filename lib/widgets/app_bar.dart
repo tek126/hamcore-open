@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:meshcore_open/connector/meshcore_connector.dart';
-import 'package:meshcore_open/widgets/battery_indicator.dart';
+import 'package:hamcore_open/connector/meshcore_connector.dart';
+import 'package:hamcore_open/widgets/battery_indicator.dart';
 import 'package:provider/provider.dart';
 
 import 'radio_stats_entry.dart';

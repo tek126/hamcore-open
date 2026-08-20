@@ -1,16 +1,16 @@
-# Privacy Policy for MeshCore Open
+# Privacy Policy for HamCore Open
 
 **Last Updated:** January 11, 2026
 
 ## Introduction
 
-MeshCore Open ("the App") is an open-source Flutter application for communicating with MeshCore LoRa mesh networking devices. This Privacy Policy explains how the App handles your information.
+HamCore Open ("the App") is an open-source Flutter application for communicating with HamCore LoRa mesh networking devices. This Privacy Policy explains how the App handles your information.
 
 ## Data Collection
 
 ### Data We Do NOT Collect
 
-MeshCore Open does **not**:
+HamCore Open does **not**:
 - Collect personal information
 - Send data to external servers (except map tile requests)
 - Track your usage or behavior
@@ -40,7 +40,7 @@ The App requires certain device permissions to function:
 - **BLUETOOTH, BLUETOOTH_ADMIN** (Android 11 and below)
 - **BLUETOOTH_SCAN, BLUETOOTH_CONNECT, BLUETOOTH_ADVERTISE** (Android 12+)
 
-These permissions are used solely to discover and communicate with MeshCore hardware devices via Bluetooth Low Energy (BLE).
+These permissions are used solely to discover and communicate with HamCore hardware devices via Bluetooth Low Energy (BLE).
 
 ### Location Permission
 - **ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION**
@@ -60,7 +60,7 @@ Used to display notifications for incoming messages when the app is in the backg
 ### Background Service Permissions
 - **FOREGROUND_SERVICE, FOREGROUND_SERVICE_CONNECTED_DEVICE, WAKE_LOCK**
 
-Used to maintain BLE connection with your MeshCore device while the app is in the background.
+Used to maintain BLE connection with your HamCore device while the app is in the background.
 
 ## Third-Party Services
 
@@ -77,7 +77,7 @@ GIF search is optional and only activated when you choose to use it. See [Giphy'
 
 ## Mesh Network Communications
 
-Messages sent through the MeshCore mesh network are transmitted over radio frequencies to other mesh devices. The App itself does not control or monitor these communications beyond facilitating the connection between your mobile device and your MeshCore hardware.
+Messages sent through the HamCore mesh network are transmitted over radio frequencies to other mesh devices. The App itself does not control or monitor these communications beyond facilitating the connection between your mobile device and your HamCore hardware.
 
 ## Data Security
 
@@ -89,7 +89,7 @@ The App does not knowingly collect any personal information from children under 
 
 ## Open Source
 
-MeshCore Open is open-source software. You can review the complete source code to verify these privacy practices at [the project repository].
+HamCore Open is open-source software. You can review the complete source code to verify these privacy practices at [the project repository].
 
 ## Changes to This Policy
 
@@ -101,4 +101,4 @@ If you have questions about this Privacy Policy or the App's privacy practices, 
 
 ---
 
-**Summary**: MeshCore Open is a privacy-respecting app that stores all data locally on your device. We do not collect, track, or share your personal information.
+**Summary**: HamCore Open is a privacy-respecting app that stores all data locally on your device. We do not collect, track, or share your personal information.

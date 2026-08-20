@@ -9,7 +9,7 @@ class AppLocalizationsUk extends AppLocalizations {
   AppLocalizationsUk([String locale = 'uk']) : super(locale);
 
   @override
-  String get appTitle => 'MeshCore Open';
+  String get appTitle => 'HamCore Open';
 
   @override
   String get nav_contacts => 'Контакти';
@@ -136,7 +136,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get common_interval => 'Інтервал';
 
   @override
-  String get scanner_title => 'MeshCore: Відкритий доступ';
+  String get scanner_title => 'HamCore: Відкритий доступ';
 
   @override
   String get connectionChoiceUsbLabel => 'USB';
@@ -194,7 +194,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get usbScreenSubtitle =>
-      'Виберіть виявлений USB-пристрій і підключіть його безпосередньо до вашого вузла MeshCore.';
+      'Виберіть виявлений USB-пристрій і підключіть його безпосередньо до вашого вузла HamCore.';
 
   @override
   String get usbScreenStatus => 'Виберіть пристрій USB';
@@ -285,11 +285,11 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get scanner_searchingDevices => 'Пошук пристроїв MeshCore...';
+  String get scanner_searchingDevices => 'Пошук пристроїв HamCore...';
 
   @override
   String get scanner_tapToScan =>
-      'Натисніть «Сканувати», щоб знайти пристрої MeshCore';
+      'Натисніть «Сканувати», щоб знайти пристрої HamCore';
 
   @override
   String scanner_connectionFailed(String error) {
@@ -327,7 +327,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get device_quickSwitch => 'Швидке перемикання';
 
   @override
-  String get device_meshcore => 'MeshCore';
+  String get device_meshcore => 'HamCore';
 
   @override
   String get settings_title => 'Налаштування';
@@ -557,7 +557,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get settings_rebootDeviceSubtitle =>
-      'Перезавантажити пристрій MeshCore';
+      'Перезавантажити пристрій HamCore';
 
   @override
   String get settings_rebootDeviceConfirm =>
@@ -586,15 +586,15 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String settings_aboutVersion(String version) {
-    return 'MeshCore Open v$version';
+    return 'HamCore Open v$version';
   }
 
   @override
-  String get settings_aboutLegalese => 'Проєкт MeshCore Open Source 2026';
+  String get settings_aboutLegalese => 'Проєкт HamCore Open Source 2026';
 
   @override
   String get settings_aboutDescription =>
-      'Клієнт Flutter з відкритим вихідним кодом для пристроїв мережі MeshCore LoRa.';
+      'Клієнт Flutter з відкритим вихідним кодом для пристроїв мережі HamCore LoRa.';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>
@@ -637,7 +637,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get settings_frequencyHelper => '300,0 – 2500,0';
 
   @override
-  String get settings_frequencyInvalid => 'Некоректна частота (300-2500 МГц)';
+  String get settings_frequencyInvalid =>
+      'Некоректна частота (420-450 / 902-928 МГц)';
 
   @override
   String get settings_bandwidth => 'Смуга пропускання';
@@ -666,7 +667,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get settings_clientRepeatFreqWarning =>
-      'Повтор без підключення до мережі вимагає частоти 433, 869 або 918 МГц.';
+      'Повтор без підключення до мережі вимагає частоти 420-450 / 902-928 МГц.';
 
   @override
   String settings_error(String message) {
@@ -2508,7 +2509,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get repeater_frequencyMhz => 'Частота (МГц)';
 
   @override
-  String get repeater_frequencyHelper => '300-2500 МГц';
+  String get repeater_frequencyHelper => '420-450 / 902-928 МГц';
 
   @override
   String get repeater_txPower => 'Потужність TX';
@@ -4267,7 +4268,7 @@ class AppLocalizationsUk extends AppLocalizations {
       'Копіювання оголошення в буфер обміну завершилось невдало';
 
   @override
-  String get notification_activityTitle => 'Активність MeshCore';
+  String get notification_activityTitle => 'Активність HamCore';
 
   @override
   String notification_messagesCount(int count) {
@@ -4363,11 +4364,11 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get settings_gpxExportShareText =>
-      'Дані карти експортовані з meshcore-open';
+      'Дані карти експортовані з hamcore-open';
 
   @override
   String get settings_gpxExportShareSubject =>
-      'експорт даних карти meshcore-open у форматі GPX';
+      'експорт даних карти hamcore-open у форматі GPX';
 
   @override
   String get snrIndicator_nearByRepeaters => 'Найближчі ретранслятори';
@@ -4696,7 +4697,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get translation_systemLanguage => 'Мова системи';
 
   @override
-  String get background_serviceTitle => 'MeshCore працює';
+  String get background_serviceTitle => 'HamCore працює';
 
   @override
   String get background_serviceText => 'Підтримує з\'єднання BLE';

@@ -19,9 +19,9 @@ class BackgroundService {
     if (!PlatformInfo.isAndroid || _initialized) return;
     FlutterForegroundTask.init(
       androidNotificationOptions: AndroidNotificationOptions(
-        channelId: 'meshcore_background',
-        channelName: 'MeshCore Background',
-        channelDescription: 'Keeps MeshCore running in the background.',
+        channelId: 'hamcore_background',
+        channelName: 'HamCore Background',
+        channelDescription: 'Keeps HamCore Open running in the background.',
         channelImportance: NotificationChannelImportance.LOW,
         priority: NotificationPriority.LOW,
       ),

@@ -9,7 +9,7 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get appTitle => 'MeshCore Open';
+  String get appTitle => 'HamCore Open';
 
   @override
   String get nav_contacts => '联系人';
@@ -191,7 +191,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get usbScreenTitle => '通过USB连接';
 
   @override
-  String get usbScreenSubtitle => '选择已检测到的串行设备，并直接连接到您的 MeshCore 节点。';
+  String get usbScreenSubtitle => '选择已检测到的串行设备，并直接连接到您的 HamCore 节点。';
 
   @override
   String get usbScreenStatus => '选择一个 USB 设备';
@@ -273,10 +273,10 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get scanner_searchingDevices => '正在搜索 MeshCore 设备...';
+  String get scanner_searchingDevices => '正在搜索 HamCore 设备...';
 
   @override
-  String get scanner_tapToScan => '点击“扫描”按钮以查找 MeshCore 设备。';
+  String get scanner_tapToScan => '点击“扫描”按钮以查找 HamCore 设备。';
 
   @override
   String scanner_connectionFailed(String error) {
@@ -526,7 +526,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get settings_rebootDevice => '重启设备';
 
   @override
-  String get settings_rebootDeviceSubtitle => '重启 MeshCore 设备';
+  String get settings_rebootDeviceSubtitle => '重启 HamCore 设备';
 
   @override
   String get settings_rebootDeviceConfirm => '确定要重启设备吗？这将断开与设备的连接。';
@@ -551,15 +551,15 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String settings_aboutVersion(String version) {
-    return 'MeshCore Open v$version';
+    return 'HamCore Open v$version';
   }
 
   @override
-  String get settings_aboutLegalese => '2026 MeshCore 开源项目';
+  String get settings_aboutLegalese => '2026 HamCore 开源项目';
 
   @override
   String get settings_aboutDescription =>
-      '一个开源的 Flutter 客户端，用于 MeshCore LoRa 无线网络设备。';
+      '一个开源的 Flutter 客户端，用于 HamCore LoRa 无线网络设备。';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>
@@ -599,10 +599,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get settings_frequency => '频率 (MHz)';
 
   @override
-  String get settings_frequencyHelper => '300.0 - 2500.0';
+  String get settings_frequencyHelper => '420-450 / 902-928';
 
   @override
-  String get settings_frequencyInvalid => '无效频率范围（300-2500 MHz）';
+  String get settings_frequencyInvalid => '无效频率范围（420-450 / 902-928 MHz）';
 
   @override
   String get settings_bandwidth => '带宽';
@@ -630,7 +630,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get settings_clientRepeatFreqWarning =>
-      '离网重复通信需要使用 433、869 或 918 兆赫兹的频率。';
+      '离网重复通信需要使用 420-450 / 902-928 兆赫兹的频率。';
 
   @override
   String settings_error(String message) {
@@ -2385,7 +2385,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get repeater_frequencyMhz => '频率 (MHz)';
 
   @override
-  String get repeater_frequencyHelper => '300-2500 兆赫';
+  String get repeater_frequencyHelper => '420-450 / 902-928 兆赫';
 
   @override
   String get repeater_txPower => 'TX 功率';
@@ -3970,7 +3970,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get contacts_contactAdvertCopyFailed => '复制广播到剪贴板失败。';
 
   @override
-  String get notification_activityTitle => 'MeshCore 活动';
+  String get notification_activityTitle => 'HamCore 活动';
 
   @override
   String notification_messagesCount(int count) {
@@ -4035,10 +4035,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get settings_gpxExportAllContacts => '所有联系人位置';
 
   @override
-  String get settings_gpxExportShareText => '来自 MeshCore Open 的地图数据导出';
+  String get settings_gpxExportShareText => '来自 HamCore Open 的地图数据导出';
 
   @override
-  String get settings_gpxExportShareSubject => 'MeshCore Open GPX 地图数据导出';
+  String get settings_gpxExportShareSubject => 'HamCore Open GPX 地图数据导出';
 
   @override
   String get snrIndicator_nearByRepeaters => '附近的重复器';
@@ -4335,7 +4335,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get translation_systemLanguage => '系统语言';
 
   @override
-  String get background_serviceTitle => 'MeshCore running';
+  String get background_serviceTitle => 'HamCore running';
 
   @override
   String get background_serviceText => 'Keeping BLE connected';

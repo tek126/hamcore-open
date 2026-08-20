@@ -31,7 +31,7 @@
    - **Name**: Meshcore Open
    - **Primary Language**: English (U.S.)
    - **Bundle ID**: Select `com.monitormx.meshcoreopen` from dropdown
-   - **SKU**: `meshcore-open-001` (or any unique identifier)
+   - **SKU**: `hamcore-open-001` (or any unique identifier)
    - **User Access**: Full Access
 6. Click **"Create"**
 
@@ -86,16 +86,16 @@ The IPA will be created at: `build/ios/ipa/meshcore_open.ipa`
 
 3. Fill in **Description**:
    ```
-   Meshcore Open is a Flutter client for MeshCore LoRa mesh networking devices.
+   Meshcore Open is a Flutter client for HamCore LoRa mesh networking devices.
 
    Features:
-   - BLE connectivity to MeshCore devices
+   - BLE connectivity to HamCore devices
    - Real-time mesh network communication
    - Map visualization with OpenStreetMap
    - Community management with QR code scanning
    - Message tracking and retry system
 
-   Connect to your MeshCore LoRa device and start communicating over the mesh network.
+   Connect to your HamCore LoRa device and start communicating over the mesh network.
    ```
 
 4. **Keywords**: `lora,mesh,networking,bluetooth,communication`
@@ -241,4 +241,4 @@ Distribution:
 For issues with:
 - **App Store Process**: [Apple Developer Support](https://developer.apple.com/contact/)
 - **Flutter Build Issues**: [Flutter GitHub](https://github.com/flutter/flutter/issues)
-- **Meshcore Open App**: [GitHub Issues](https://github.com/wel97459/meshcore-open/issues)
+- **Meshcore Open App**: [GitHub Issues](https://github.com/tek126/hamcore-open/issues)

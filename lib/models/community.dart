@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:crypto/crypto.dart' as crypto;
-import 'package:meshcore_open/utils/keys.dart';
+import 'package:hamcore_open/utils/keys.dart';
 
 import 'channel.dart';
 
@@ -49,7 +49,9 @@ class Community {
   /// Parse a community from QR code JSON data
   factory Community.fromQrData(String id, String qrData) {
     final json = jsonDecode(qrData) as Map<String, dynamic>;
-    if (json['type'] != 'meshcore_community') {
+    // Accept both hamcore_community and legacy meshcore_community QR codes
+    if (json['type'] != 'hamcore_community' &&
+        json['type'] != 'meshcore_community') {
       throw const FormatException('Invalid QR code type');
     }
     if (json['v'] != 1) {
@@ -102,7 +104,7 @@ class Community {
   String toQrJson() {
     return jsonEncode({
       'v': 1,
-      'type': 'meshcore_community',
+      'type': 'hamcore_community',
       'name': name,
       'k': base64Url.encode(secret),
     });
@@ -141,7 +143,10 @@ class Community {
   static bool isValidQrData(String data) {
     try {
       final json = jsonDecode(data) as Map<String, dynamic>;
-      if (json['type'] != 'meshcore_community') return false;
+      if (json['type'] != 'hamcore_community' &&
+          json['type'] != 'meshcore_community') {
+        return false;
+      }
       if (json['v'] != 1) return false;
       if (json['name'] == null || (json['name'] as String).isEmpty) {
         return false;
@@ -213,7 +218,10 @@ class Community {
   static Uint8List? extractSecretFromQrData(String qrData) {
     try {
       final json = jsonDecode(qrData) as Map<String, dynamic>;
-      if (json['type'] != 'meshcore_community') return null;
+      if (json['type'] != 'hamcore_community' &&
+          json['type'] != 'meshcore_community') {
+        return null;
+      }
       if (json['v'] != 1) return null;
       final secretBase64 = json['k'] as String;
       final secret = base64Url.decode(secretBase64);

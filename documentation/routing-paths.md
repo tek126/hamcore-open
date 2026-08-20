@@ -1,10 +1,10 @@
 # Routing Paths
 
-This page covers how MeshCore Open represents, selects, validates, and stores routing paths in the UI and data layer.
+This page covers how HamCore Open represents, selects, validates, and stores routing paths in the UI and data layer.
 
 ## Path Routing
 
-MeshCore supports variable-length multi-byte routing paths so the app can scale from small meshes to very large node sets.
+The mesh protocol supports variable-length multi-byte routing paths so the app can scale from small meshes to very large node sets.
 
 ### Hash Width and Multi-Byte Paths
 

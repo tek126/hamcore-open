@@ -1,4 +1,4 @@
-package com.meshcore.meshcore_open
+package com.hamcore.hamcore_open
 
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine

@@ -9,7 +9,7 @@ class AppLocalizationsHu extends AppLocalizations {
   AppLocalizationsHu([String locale = 'hu']) : super(locale);
 
   @override
-  String get appTitle => 'MeshCore Open';
+  String get appTitle => 'HamCore Open';
 
   @override
   String get nav_contacts => 'Kapcsolatok';
@@ -136,7 +136,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get common_interval => 'Intervallum';
 
   @override
-  String get scanner_title => 'MeshCore Open';
+  String get scanner_title => 'HamCore Open';
 
   @override
   String get connectionChoiceUsbLabel => 'USB';
@@ -193,7 +193,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get usbScreenSubtitle =>
-      'Válasszon egy észlelt soros eszközt, és csatlakozzon közvetlenül a MeshCore csomóponthoz.';
+      'Válasszon egy észlelt soros eszközt, és csatlakozzon közvetlenül a HamCore csomóponthoz.';
 
   @override
   String get usbScreenStatus => 'Válasszon ki egy USB-eszközt';
@@ -283,11 +283,11 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get scanner_searchingDevices => 'MeshCore eszközök keresése...';
+  String get scanner_searchingDevices => 'HamCore eszközök keresése...';
 
   @override
   String get scanner_tapToScan =>
-      'Koppintson a Scan elemre a MeshCore-eszközök megkereséséhez';
+      'Koppintson a Scan elemre a HamCore-eszközök megkereséséhez';
 
   @override
   String scanner_connectionFailed(String error) {
@@ -325,7 +325,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get device_quickSwitch => 'Gyors váltás';
 
   @override
-  String get device_meshcore => 'MeshCore';
+  String get device_meshcore => 'HamCore';
 
   @override
   String get settings_title => 'Beállítások elemre';
@@ -558,7 +558,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get settings_rebootDevice => 'Eszköz újraindítása';
 
   @override
-  String get settings_rebootDeviceSubtitle => 'Indítsa újra a MeshCore eszközt';
+  String get settings_rebootDeviceSubtitle => 'Indítsa újra a HamCore eszközt';
 
   @override
   String get settings_rebootDeviceConfirm =>
@@ -585,15 +585,15 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String settings_aboutVersion(String version) {
-    return 'MeshCore Open v$version';
+    return 'HamCore Open v$version';
   }
 
   @override
-  String get settings_aboutLegalese => '2026 MeshCore nyílt forráskódú projekt';
+  String get settings_aboutLegalese => '2026 HamCore nyílt forráskódú projekt';
 
   @override
   String get settings_aboutDescription =>
-      'Nyílt forráskódú Flutter kliens MeshCore LoRa mesh hálózati eszközökhöz.';
+      'Nyílt forráskódú Flutter kliens HamCore LoRa mesh hálózati eszközökhöz.';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>
@@ -637,7 +637,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get settings_frequencyInvalid =>
-      'Érvénytelen frekvencia (300-2500 MHz)';
+      'Érvénytelen frekvencia (420-450 / 902-928 MHz)';
 
   @override
   String get settings_bandwidth => 'Sávszélesség';
@@ -667,7 +667,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get settings_clientRepeatFreqWarning =>
-      'A hálózaton kívüli ismétlés 433, 869 vagy 918 MHz frekvenciát igényel';
+      'A hálózaton kívüli ismétlés 420-450 / 902-928 MHz frekvenciát igényel';
 
   @override
   String settings_error(String message) {
@@ -2507,7 +2507,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get repeater_frequencyMhz => 'Frekvencia (MHz)';
 
   @override
-  String get repeater_frequencyHelper => '300-2500 MHz';
+  String get repeater_frequencyHelper => '420-450 / 902-928 MHz';
 
   @override
   String get repeater_txPower => 'TX teljesítmény';
@@ -4257,7 +4257,7 @@ class AppLocalizationsHu extends AppLocalizations {
       'A hirdetés vágólapra másolása nem sikerült.';
 
   @override
-  String get notification_activityTitle => 'MeshCore tevékenység';
+  String get notification_activityTitle => 'HamCore tevékenység';
 
   @override
   String notification_messagesCount(int count) {
@@ -4347,11 +4347,11 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get settings_gpxExportShareText =>
-      'A térképadatok a meshcore-openből exportálva';
+      'A térképadatok a hamcore-openből exportálva';
 
   @override
   String get settings_gpxExportShareSubject =>
-      'meshcore-open GPX térképadatok exportálása';
+      'hamcore-open GPX térképadatok exportálása';
 
   @override
   String get snrIndicator_nearByRepeaters => 'Közeli átjátszók';
@@ -4677,7 +4677,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get translation_systemLanguage => 'Rendszer nyelve';
 
   @override
-  String get background_serviceTitle => 'MeshCore fut';
+  String get background_serviceTitle => 'HamCore fut';
 
   @override
   String get background_serviceText => 'A BLE-kapcsolat fenntartása';

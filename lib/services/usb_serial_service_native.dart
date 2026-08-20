@@ -18,10 +18,10 @@ class UsbSerialService {
   UsbSerialService();
 
   static const MethodChannel _androidMethodChannel = MethodChannel(
-    'meshcore_open/android_usb_serial',
+    'hamcore_open/android_usb_serial',
   );
   static const EventChannel _androidEventChannel = EventChannel(
-    'meshcore_open/android_usb_serial_events',
+    'hamcore_open/android_usb_serial_events',
   );
   final StreamController<Uint8List> _frameController =
       StreamController<Uint8List>.broadcast();

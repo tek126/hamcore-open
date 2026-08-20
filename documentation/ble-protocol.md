@@ -49,7 +49,7 @@ enum MeshCoreConnectionState {
 ## BLE Connection Lifecycle
 
 1. **Scan** with known name prefixes (defined in `MeshCoreUuids.deviceNamePrefixes`):
-    - `MeshCore-`
+    - `HamCore-`
     - `Whisper-`
     - `WisCore-`
     - `Seeed`

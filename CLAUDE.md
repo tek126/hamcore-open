@@ -1,6 +1,6 @@
-# MeshCore Open - Flutter Client
+# HamCore Open - Flutter Client
 
-Open-source Flutter client for MeshCore LoRa mesh networking devices. Connects to MeshCore-compatible radios over **BLE, TCP, or USB serial** and provides direct/channel chat, contact and channel management, on-map node tracking, repeater administration, and on-device message translation.
+Open-source Flutter client for HamCore LoRa mesh radios (the FCC Part 97-legal MeshCore fork, github.com/tek126/hamcore). Fork of zjs81/meshcore-open (MIT). Connects to HamCore radios over **BLE, TCP, or USB serial** and provides direct/channel chat, contact and channel management, on-map node tracking, repeater administration, and on-device message translation. Note: HamCore content is plaintext on-air; the Dart package is `hamcore_open` but internal class names (MeshCoreConnector etc.) retain their upstream names.
 
 ## Build Commands
 

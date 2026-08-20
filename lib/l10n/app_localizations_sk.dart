@@ -9,7 +9,7 @@ class AppLocalizationsSk extends AppLocalizations {
   AppLocalizationsSk([String locale = 'sk']) : super(locale);
 
   @override
-  String get appTitle => 'MeshCore Open';
+  String get appTitle => 'HamCore Open';
 
   @override
   String get nav_contacts => 'Kontakty';
@@ -136,7 +136,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get common_interval => 'Časový interval';
 
   @override
-  String get scanner_title => 'MeshCore – Verzia pre verejnosť';
+  String get scanner_title => 'HamCore – Verzia pre verejnosť';
 
   @override
   String get connectionChoiceUsbLabel => 'USB';
@@ -193,7 +193,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get usbScreenSubtitle =>
-      'Vyberte detekovaný sériový zariadenie a pripojte ho priamo k vašej MeshCore uzlu.';
+      'Vyberte detekovaný sériový zariadenie a pripojte ho priamo k vašej HamCore uzlu.';
 
   @override
   String get usbScreenStatus => 'Vyberte USB zariadenie';
@@ -285,11 +285,11 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get scanner_searchingDevices => 'Hľadám zariadenia MeshCore...';
+  String get scanner_searchingDevices => 'Hľadám zariadenia HamCore...';
 
   @override
   String get scanner_tapToScan =>
-      'Stlač skenovanie na nájdenie zariadení MeshCore.';
+      'Stlač skenovanie na nájdenie zariadení HamCore.';
 
   @override
   String scanner_connectionFailed(String error) {
@@ -327,7 +327,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get device_quickSwitch => 'Rýchle prepínač';
 
   @override
-  String get device_meshcore => 'MeshCore';
+  String get device_meshcore => 'HamCore';
 
   @override
   String get settings_title => 'Nastavenia';
@@ -554,8 +554,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get settings_rebootDevice => 'Restartovať zariadenie';
 
   @override
-  String get settings_rebootDeviceSubtitle =>
-      'Restartujte zariadenie MeshCore.';
+  String get settings_rebootDeviceSubtitle => 'Restartujte zariadenie HamCore.';
 
   @override
   String get settings_rebootDeviceConfirm =>
@@ -583,15 +582,15 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String settings_aboutVersion(String version) {
-    return 'MeshCore, verzia $version';
+    return 'HamCore, verzia $version';
   }
 
   @override
-  String get settings_aboutLegalese => 'MeshCore Open Source Projekt 2024';
+  String get settings_aboutLegalese => 'HamCore Open Source Projekt 2024';
 
   @override
   String get settings_aboutDescription =>
-      'Otvorený zdrojový Flutter klient pre MeshCore LoRa sieťové zariadenia.';
+      'Otvorený zdrojový Flutter klient pre HamCore LoRa sieťové zariadenia.';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>
@@ -634,7 +633,8 @@ class AppLocalizationsSk extends AppLocalizations {
   String get settings_frequencyHelper => '300,0 – 2500,0';
 
   @override
-  String get settings_frequencyInvalid => 'Neplatná frekvencia (300-2500 MHz)';
+  String get settings_frequencyInvalid =>
+      'Neplatná frekvencia (420-450 / 902-928 MHz)';
 
   @override
   String get settings_bandwidth => 'Šírka pásma';
@@ -663,7 +663,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get settings_clientRepeatFreqWarning =>
-      'Použitie off-grid systému vyžaduje frekvencie 433, 869 alebo 918 MHz.';
+      'Použitie off-grid systému vyžaduje frekvencie 420-450 / 902-928 MHz.';
 
   @override
   String settings_error(String message) {
@@ -4242,7 +4242,7 @@ class AppLocalizationsSk extends AppLocalizations {
       'Kopírovanie inzerátu do schránky zlyhalo.';
 
   @override
-  String get notification_activityTitle => 'Aktivita MeshCore';
+  String get notification_activityTitle => 'Aktivita HamCore';
 
   @override
   String notification_messagesCount(int count) {
@@ -4335,11 +4335,11 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get settings_gpxExportShareText =>
-      'Mapové údaje exportované z meshcore-open';
+      'Mapové údaje exportované z hamcore-open';
 
   @override
   String get settings_gpxExportShareSubject =>
-      'meshcore-open export dát GPX mapových údajov';
+      'hamcore-open export dát GPX mapových údajov';
 
   @override
   String get snrIndicator_nearByRepeaters => 'Miestne opakovače';
@@ -4663,7 +4663,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get translation_systemLanguage => 'Jazyk systému';
 
   @override
-  String get background_serviceTitle => 'MeshCore running';
+  String get background_serviceTitle => 'HamCore running';
 
   @override
   String get background_serviceText => 'Keeping BLE connected';

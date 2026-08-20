@@ -67,8 +67,8 @@ class NotificationService {
       requestSoundPermission: true,
     );
     const windowsSettings = WindowsInitializationSettings(
-      appName: 'MeshCore Open',
-      appUserModelId: 'org.meshcore.open.app',
+      appName: 'HamCore Open',
+      appUserModelId: 'org.hamcore.open.app',
       guid: 'e7ea8f85-72f5-4f36-91f6-038f740ccf86',
     );
     const linuxSettings = LinuxInitializationSettings(

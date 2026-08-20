@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:gpx/gpx.dart';
-import 'package:meshcore_open/connector/meshcore_connector.dart';
-import 'package:meshcore_open/connector/meshcore_protocol.dart';
+import 'package:hamcore_open/connector/meshcore_connector.dart';
+import 'package:hamcore_open/connector/meshcore_protocol.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import '../utils/platform_info.dart';
@@ -66,7 +66,7 @@ class GpxExport {
         continue;
       }
       final url = contact.rawPacket != null
-          ? "meshcore://${pubKeyToHex(contact.rawPacket!)}"
+          ? "hamcore://${pubKeyToHex(contact.rawPacket!)}"
           : "";
       _addContact(
         contact.name,
@@ -85,7 +85,7 @@ class GpxExport {
         continue;
       }
       final url = contact.rawPacket != null
-          ? "meshcore://${pubKeyToHex(contact.rawPacket!)}"
+          ? "hamcore://${pubKeyToHex(contact.rawPacket!)}"
           : "";
       _addContact(
         contact.name,
@@ -104,7 +104,7 @@ class GpxExport {
         continue;
       }
       final url = contact.rawPacket != null
-          ? "meshcore://${pubKeyToHex(contact.rawPacket!)}"
+          ? "hamcore://${pubKeyToHex(contact.rawPacket!)}"
           : "";
       _addContact(
         contact.name,

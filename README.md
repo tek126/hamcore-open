@@ -1,16 +1,25 @@
-# MeshCore Open
+# HamCore Open
 
-Open-source Flutter client for MeshCore LoRa mesh networking devices.
+Open-source Flutter client for **HamCore** radios — the FCC Part 97-legal LoRa mesh
+firmware for US amateur radio operators ([github.com/tek126/hamcore](https://github.com/tek126/hamcore)).
+
+HamCore Open is a fork of [MeshCore Open](https://github.com/zjs81/meshcore-open) by
+**zjs81** (MIT License) — the mesh client architecture, transports, and UI are their
+work. This fork adapts it to HamCore: US amateur band presets (33cm / 70cm), callsign
+requirements, `HamCore-` device discovery, and plaintext-on-air awareness.
+
+> ⚠️ **A US amateur radio license (Technician or higher) is required to transmit** with
+> HamCore radios. Everything sent over the mesh is plaintext and publicly readable —
+> that is a legal requirement (§97.113), not an oversight. Do not send anything private.
 
 ## Overview
 
-MeshCore Open is a cross-platform mobile application for communicating with MeshCore LoRa mesh network devices via Bluetooth Low Energy (BLE). The app enables long-range, off-grid communication through peer-to-peer messaging, public channels, and mesh networking capabilities.
+HamCore Open is a cross-platform application for communicating with HamCore LoRa mesh
+radios via Bluetooth Low Energy (BLE), USB serial, or TCP. The app enables long-range,
+off-grid amateur radio communication through peer-to-peer messaging, public channels,
+and mesh networking.
 
-**Website:** [meshcoreopen.org](https://meshcoreopen.org/)
-
-<a href="http://apps.obtainium.imranr.dev/redirect.html?r=obtainium://add/https://github.com/zjs81/meshcore-open">
-        <img src="assets/badges/badge_obtainium.png" height="80" align="center" alt="Get it on Obtainium"/>
-</a>
+Upstream project website: [meshcoreopen.org](https://meshcoreopen.org/)
 
 ## Screenshots
 
@@ -53,7 +62,7 @@ MeshCore Open is a cross-platform mobile application for communicating with Mesh
 
 ### Device Management
 
-- **BLE, USB, TCP Connection**: Scan and connect to MeshCore devices via Bluetooth, USB or TCP
+- **BLE, USB, TCP Connection**: Scan and connect to HamCore devices via Bluetooth, USB or TCP
 - **Device Settings**: Configure radio parameters, power settings, and network options
 - **Battery Monitoring**: Real-time battery status with chemistry-specific voltage curves
 - **Firmware Updates**: Over-the-air firmware updates via BLE (coming soon)
@@ -73,7 +82,7 @@ MeshCore Open is a cross-platform mobile application for communicating with Mesh
 - **State Management**: Provider pattern with ChangeNotifier
 - **BLE Protocol**: Nordic UART Service (NUS) over Bluetooth Low Energy
 - **Storage**: Local SQLite database for messages and contact data
-- **Encryption**: End-to-end encryption for private messages using the MeshCore protocol
+- **Authentication, not encryption**: Ed25519-signed identities and keyed message authentication; content is plaintext on-air as required by FCC Part 97
 
 ### Platform Support
 
@@ -108,15 +117,16 @@ MeshCore Open is a cross-platform mobile application for communicating with Mesh
 
 - Flutter SDK 3.38.5 or later
 - Android Studio / Xcode (for mobile development)
-- A MeshCore-compatible LoRa device
+- A LoRa device flashed with [HamCore firmware](https://github.com/tek126/hamcore)
+- A US amateur radio license (Technician or higher) to transmit
 
 ### Installation
 
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/zjs81/meshcore-open.git
-   cd meshcore-open
+   git clone https://github.com/tek126/hamcore-open.git
+   cd hamcore-open
    ```
 
 2. **Install dependencies**
@@ -187,8 +197,8 @@ lib/
 
 ### Device Discovery
 
-Devices are discovered by scanning for BLE advertisements with known MeshCore device name prefixes. These are currently:
-    - `MeshCore-`
+Devices are discovered by scanning for BLE advertisements with known HamCore device name prefixes. These are currently:
+    - `HamCore-`
     - `Whisper-`
     - `WisCore-`
     - `HT-`
@@ -224,9 +234,9 @@ Messages are transmitted as binary frames using a custom protocol optimized for 
 
 This is an open-source project. Contributions are welcome!
 
-## SWHID and Archive badge
-[![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/zjs81/meshcore-open/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/zjs81/meshcore-open)
-[![SWH](https://archive.softwareheritage.org/badge/swh:1:dir:d37a80b06359730864150ad2aeadd46cce9abd55/)](https://archive.softwareheritage.org/swh:1:dir:d37a80b06359730864150ad2aeadd46cce9abd55;origin=https://github.com/zjs81/meshcore-open;visit=swh:1:snp:47656c4b55ab40a689ff8d2f045196725f05096b;anchor=swh:1:rev:0fe250230905fdd05dbedc0f546736990beacf53)
+## Upstream
+
+This project is a fork of [zjs81/meshcore-open](https://github.com/zjs81/meshcore-open) (MIT License).
 
 ### Development Guidelines
 
@@ -246,22 +256,13 @@ This is an open-source project. Contributions are welcome!
 ## Support
 
 For issues, questions, or feature requests, please open an issue on GitHub:
-<https://github.com/zjs81/meshcore-open/issues>
+<https://github.com/tek126/hamcore-open/issues>
 
-## Donate
-
-If you find MeshCore Open useful and would like to support development, you can donate Solana or other Solana tokens:
-
-**Solana Address:** `F15YanjZj96YTBtKJYgNa8RLQLCZkx5CEwogPWkqXeoQ`
-
-
-**Monero Address:** `453TxnpUqjkJtXxzdjMsrgERNkBRXEGamPbpC45ENrvKAk9tH7kZbxWF82Hz66etgDZyXFPEBU2JUEqhLeJyWt9kBvTVy5m`
-
-**Bitcoin Address:** `bc1qh45x28v8dslcg4v4upmqd9g0mvc3lnyffmyzr5`
-
-Your support helps maintain and improve this open-source project!
 
 ## Acknowledgments
+
+- Forked from [MeshCore Open](https://github.com/zjs81/meshcore-open) by zjs81 (MIT) — to support the upstream author, see their repo
+- Companion firmware: [HamCore](https://github.com/tek126/hamcore), a fork of [MeshCore](https://github.com/meshcore-dev/MeshCore) by Scott Powell (ripplebiz)
 
 - Built with [Flutter](https://flutter.dev/)
 - Map tiles from [OpenStreetMap](https://www.openstreetmap.org/)

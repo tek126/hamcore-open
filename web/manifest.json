@@ -1,11 +1,11 @@
 {
-    "name": "meshcore_open",
-    "short_name": "meshcore_open",
+    "name": "HamCore Open",
+    "short_name": "HamCore Open",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Companion app for HamCore Part 97-legal LoRa mesh radios.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

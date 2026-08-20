@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:meshcore_open/screens/path_trace_map.dart';
-import 'package:meshcore_open/services/notification_service.dart';
-import 'package:meshcore_open/utils/app_logger.dart';
-import 'package:meshcore_open/utils/platform_info.dart';
-import 'package:meshcore_open/widgets/app_bar.dart';
+import 'package:hamcore_open/screens/path_trace_map.dart';
+import 'package:hamcore_open/services/notification_service.dart';
+import 'package:hamcore_open/utils/app_logger.dart';
+import 'package:hamcore_open/utils/platform_info.dart';
+import 'package:hamcore_open/widgets/app_bar.dart';
 import 'package:provider/provider.dart';
 
 import '../connector/meshcore_connector.dart';
@@ -184,7 +184,7 @@ class _ContactsScreenState extends State<ContactsScreen>
             return;
           }
           final hexString = pubKeyToHex(advertPacket);
-          Clipboard.setData(ClipboardData(text: "meshcore://$hexString"));
+          Clipboard.setData(ClipboardData(text: "hamcore://$hexString"));
         }
 
         // Generic OK/ERR acks carry no command correlation, so consume only
@@ -293,7 +293,11 @@ class _ContactsScreenState extends State<ContactsScreen>
       return;
     }
     final text = clipboardData.text!.trim();
-    if (!text.startsWith('meshcore://')) {
+    // Accept both hamcore:// and legacy meshcore:// contact URIs
+    final uriPrefix = text.startsWith('hamcore://')
+        ? 'hamcore://'
+        : (text.startsWith('meshcore://') ? 'meshcore://' : null);
+    if (uriPrefix == null) {
       if (mounted) {
         showDismissibleSnackBar(
           context,
@@ -302,7 +306,7 @@ class _ContactsScreenState extends State<ContactsScreen>
       }
       return;
     }
-    final hexString = text.substring('meshcore://'.length);
+    final hexString = text.substring(uriPrefix.length);
     final Uint8List importContactFrame;
     try {
       final bytes = hex2Uint8List(hexString);

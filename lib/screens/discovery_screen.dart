@@ -341,7 +341,7 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> {
       case 'copy_contact':
         if (contact.rawPacket == null) return;
         final hexString = pubKeyToHex(contact.rawPacket!);
-        Clipboard.setData(ClipboardData(text: "meshcore://$hexString"));
+        Clipboard.setData(ClipboardData(text: "hamcore://$hexString"));
         if (!mounted) return;
         showDismissibleSnackBar(
           context,

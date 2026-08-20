@@ -59,12 +59,13 @@ class RadioSettings {
     required this.txPowerDbm,
   });
 
-  // Regional preset configurations
+  // US amateur band presets (HamCore: FCC Part 97, 33cm and 70cm only).
+  // 'US 33cm (Recommended)' matches the HamCore firmware default exactly.
   static final List<(String, RadioSettings)> presets = [
     (
-      'Australia',
+      'US 33cm (Recommended)',
       RadioSettings(
-        frequencyMHz: 915.8,
+        frequencyMHz: 906.875,
         bandwidth: LoRaBandwidth.bw250,
         spreadingFactor: LoRaSpreadingFactor.sf10,
         codingRate: LoRaCodingRate.cr4_5,
@@ -72,432 +73,42 @@ class RadioSettings {
       ),
     ),
     (
-      'Australia (Narrow)',
+      'US 33cm (Long Range)',
       RadioSettings(
-        frequencyMHz: 916.575,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf7,
-        codingRate: LoRaCodingRate.cr4_5,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Australia (Mid)',
-      RadioSettings(
-        frequencyMHz: 915.075,
+        frequencyMHz: 906.875,
         bandwidth: LoRaBandwidth.bw125,
-        spreadingFactor: LoRaSpreadingFactor.sf9,
-        codingRate: LoRaCodingRate.cr4_5,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Australia SA, WA, QLD',
-      RadioSettings(
-        frequencyMHz: 923.125,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_5,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Czech Republic',
-      RadioSettings(
-        frequencyMHz: 869.432,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf7,
-        codingRate: LoRaCodingRate.cr4_5,
-        txPowerDbm: 14,
-      ),
-    ),
-    (
-      'EU 433MHz',
-      RadioSettings(
-        frequencyMHz: 433.650,
-        bandwidth: LoRaBandwidth.bw250,
         spreadingFactor: LoRaSpreadingFactor.sf11,
-        codingRate: LoRaCodingRate.cr4_5,
+        codingRate: LoRaCodingRate.cr4_8,
         txPowerDbm: 20,
       ),
     ),
     (
-      'EU/UK (Long Range)',
+      'US 33cm (Fast)',
       RadioSettings(
-        frequencyMHz: 869.525,
+        frequencyMHz: 906.875,
         bandwidth: LoRaBandwidth.bw250,
-        spreadingFactor: LoRaSpreadingFactor.sf11,
+        spreadingFactor: LoRaSpreadingFactor.sf7,
         codingRate: LoRaCodingRate.cr4_5,
-        txPowerDbm: 14,
+        txPowerDbm: 20,
       ),
     ),
     (
-      'EU/UK (Medium Range)',
+      'US 70cm (Recommended)',
       RadioSettings(
-        frequencyMHz: 869.525,
+        frequencyMHz: 433.5,
         bandwidth: LoRaBandwidth.bw250,
-        spreadingFactor: LoRaSpreadingFactor.sf10,
-        codingRate: LoRaCodingRate.cr4_5,
-        txPowerDbm: 14,
-      ),
-    ),
-    (
-      'EU/UK (Narrow)',
-      RadioSettings(
-        frequencyMHz: 869.618,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_5,
-        txPowerDbm: 14,
-      ),
-    ),
-    (
-      'New Zealand',
-      RadioSettings(
-        frequencyMHz: 917.375,
-        bandwidth: LoRaBandwidth.bw250,
-        spreadingFactor: LoRaSpreadingFactor.sf11,
-        codingRate: LoRaCodingRate.cr4_5,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'New Zealand (Narrow)',
-      RadioSettings(
-        frequencyMHz: 917.375,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf7,
-        codingRate: LoRaCodingRate.cr4_5,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Portugal 433',
-      RadioSettings(
-        frequencyMHz: 433.375,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf9,
-        codingRate: LoRaCodingRate.cr4_5,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Portugal 869',
-      RadioSettings(
-        frequencyMHz: 869.618,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf7,
-        codingRate: LoRaCodingRate.cr4_5,
-        txPowerDbm: 14,
-      ),
-    ),
-    (
-      'Russia Artyom (VVO)',
-      RadioSettings(
-        frequencyMHz: 864.281,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_6,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Biysk (BSK)',
-      RadioSettings(
-        frequencyMHz: 869.000,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_5,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Chelyabinsk (CEK)',
-      RadioSettings(
-        frequencyMHz: 868.731,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_6,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Cherepovets (CEE)',
-      RadioSettings(
-        frequencyMHz: 868.570,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf7,
-        codingRate: LoRaCodingRate.cr4_8,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Irkutsk (IKT)',
-      RadioSettings(
-        frequencyMHz: 868.731,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf7,
-        codingRate: LoRaCodingRate.cr4_7,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Ivanovo (IWA)',
-      RadioSettings(
-        frequencyMHz: 868.731,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_8,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Izhevsk (IJK)',
-      RadioSettings(
-        frequencyMHz: 868.732,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_8,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Kaluga (KLF)',
-      RadioSettings(
-        frequencyMHz: 868.731,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf7,
-        codingRate: LoRaCodingRate.cr4_7,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Kazan (KZN)',
-      RadioSettings(
-        frequencyMHz: 868.731,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_6,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Khabarovsk (KHV)',
-      RadioSettings(
-        frequencyMHz: 864.281,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_6,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Kirov (KVX)',
-      RadioSettings(
-        frequencyMHz: 868.731,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_8,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Lipetsk (LPK)',
-      RadioSettings(
-        frequencyMHz: 868.950,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf9,
-        codingRate: LoRaCodingRate.cr4_7,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Moscow (MOW)',
-      RadioSettings(
-        frequencyMHz: 868.731,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf7,
-        codingRate: LoRaCodingRate.cr4_7,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Nizhny Novgorod (GOJ)',
-      RadioSettings(
-        frequencyMHz: 868.731,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_6,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Novosibirsk (OVB)',
-      RadioSettings(
-        frequencyMHz: 869.000,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf9,
-        codingRate: LoRaCodingRate.cr4_8,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Rostov-on-Don (ROV)',
-      RadioSettings(
-        frequencyMHz: 868.731,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf9,
-        codingRate: LoRaCodingRate.cr4_7,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Ryazan (RZN)',
-      RadioSettings(
-        frequencyMHz: 868.880,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf9,
-        codingRate: LoRaCodingRate.cr4_5,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Samara (KUF)',
-      RadioSettings(
-        frequencyMHz: 864.281,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_7,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Saratov (GSV)',
-      RadioSettings(
-        frequencyMHz: 864.281,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_7,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia St. Petersburg (LED)',
-      RadioSettings(
-        frequencyMHz: 868.856,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf7,
-        codingRate: LoRaCodingRate.cr4_7,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Tambov (TBW)',
-      RadioSettings(
-        frequencyMHz: 868.950,
-        bandwidth: LoRaBandwidth.bw62_5,
         spreadingFactor: LoRaSpreadingFactor.sf10,
         codingRate: LoRaCodingRate.cr4_5,
         txPowerDbm: 20,
       ),
     ),
     (
-      'Russia Tula (TYA)',
+      'US 70cm (Long Range)',
       RadioSettings(
-        frequencyMHz: 868.731,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_7,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Tver (KLD)',
-      RadioSettings(
-        frequencyMHz: 869.169,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_8,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Ufa (UFA)',
-      RadioSettings(
-        frequencyMHz: 868.732,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_8,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Volgograd (VOG)',
-      RadioSettings(
-        frequencyMHz: 869.525,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf7,
-        codingRate: LoRaCodingRate.cr4_7,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Voronezh (VOZ)',
-      RadioSettings(
-        frequencyMHz: 868.731,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_6,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Russia Yekaterinburg (SVX)',
-      RadioSettings(
-        frequencyMHz: 869.046,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf7,
-        codingRate: LoRaCodingRate.cr4_7,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Switzerland',
-      RadioSettings(
-        frequencyMHz: 869.618,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf8,
-        codingRate: LoRaCodingRate.cr4_5,
-        txPowerDbm: 14,
-      ),
-    ),
-    (
-      'USA Arizona',
-      RadioSettings(
-        frequencyMHz: 908.205,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf9,
-        codingRate: LoRaCodingRate.cr4_8,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'USA/Canada',
-      RadioSettings(
-        frequencyMHz: 910.525,
-        bandwidth: LoRaBandwidth.bw62_5,
-        spreadingFactor: LoRaSpreadingFactor.sf7,
-        codingRate: LoRaCodingRate.cr4_5,
-        txPowerDbm: 20,
-      ),
-    ),
-    (
-      'Vietnam',
-      RadioSettings(
-        frequencyMHz: 920.250,
-        bandwidth: LoRaBandwidth.bw250,
+        frequencyMHz: 433.5,
+        bandwidth: LoRaBandwidth.bw125,
         spreadingFactor: LoRaSpreadingFactor.sf11,
-        codingRate: LoRaCodingRate.cr4_5,
+        codingRate: LoRaCodingRate.cr4_8,
         txPowerDbm: 20,
       ),
     ),
@@ -505,7 +116,7 @@ class RadioSettings {
     (
       'Off-Grid 433',
       RadioSettings(
-        frequencyMHz: 433.0,
+        frequencyMHz: 433.5,
         bandwidth: LoRaBandwidth.bw250,
         spreadingFactor: LoRaSpreadingFactor.sf11,
         codingRate: LoRaCodingRate.cr4_8,
@@ -513,19 +124,9 @@ class RadioSettings {
       ),
     ),
     (
-      'Off-Grid 869',
+      'Off-Grid 906',
       RadioSettings(
-        frequencyMHz: 869.0,
-        bandwidth: LoRaBandwidth.bw250,
-        spreadingFactor: LoRaSpreadingFactor.sf11,
-        codingRate: LoRaCodingRate.cr4_8,
-        txPowerDbm: 14,
-      ),
-    ),
-    (
-      'Off-Grid 918',
-      RadioSettings(
-        frequencyMHz: 918.0,
+        frequencyMHz: 906.875,
         bandwidth: LoRaBandwidth.bw250,
         spreadingFactor: LoRaSpreadingFactor.sf11,
         codingRate: LoRaCodingRate.cr4_8,

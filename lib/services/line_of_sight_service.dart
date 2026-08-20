@@ -120,7 +120,7 @@ class LineOfSightService {
   static const Duration _cacheTtl = Duration(hours: 24);
   static const int _maxFetchAttempts = 4; // initial try + 3 retries
   static const Duration _initialBackoff = Duration(milliseconds: 300);
-  static const double _baselineFrequencyMHz = 915.0;
+  static const double _baselineFrequencyMHz = 906.875;
   static const double _baselineKFactor = 4.0 / 3.0;
 
   static double get baselineFrequencyMHz => _baselineFrequencyMHz;

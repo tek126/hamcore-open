@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:hamcore_open/helpers/callsign.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -742,6 +743,16 @@ class _RepeaterSettingsScreenState extends State<RepeaterSettingsScreen> {
 
       if (_dirtyFields.contains(_SettingField.name) &&
           _nameController.text.isNotEmpty) {
+        // HamCore: the firmware rejects names that don't start with a callsign
+        if (!isValidCallsignName(_nameController.text.trim())) {
+          showDismissibleSnackBar(
+            context,
+            content: const Text(
+              'Repeater name must start with a callsign (e.g. W1AW-2)',
+            ),
+          );
+          return;
+        }
         pending.add((
           field: _SettingField.name,
           command: 'set name ${_nameController.text}',
@@ -769,7 +780,18 @@ class _RepeaterSettingsScreenState extends State<RepeaterSettingsScreen> {
           _spreadingFactor != null &&
           _codingRate != null) {
         final freqText = _freqController.text.trim();
-        if (double.tryParse(freqText) != null) {
+        final freqMHz = double.tryParse(freqText);
+        // HamCore: the firmware only accepts 420-450 / 902-928 MHz
+        if (freqMHz != null && !isHamFrequencyMHz(freqMHz)) {
+          showDismissibleSnackBar(
+            context,
+            content: const Text(
+              'Frequency must be in the 420-450 or 902-928 MHz ham bands',
+            ),
+          );
+          return;
+        }
+        if (freqMHz != null) {
           final bwKHz = _bandwidth! / 1000;
           pending.add((
             field: _SettingField.radio,

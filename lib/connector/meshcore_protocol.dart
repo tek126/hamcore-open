@@ -337,8 +337,10 @@ const int pathHashSize = 1;
 const int maxNameSize = 32;
 const int maxFrameSize = 172;
 const int appProtocolVersion = 4;
-// Matches firmware MAX_TEXT_LEN (10 * CIPHER_BLOCK_SIZE).
-const int maxTextPayloadBytes = 160;
+// Matches HamCore firmware MAX_TEXT_LEN. The 8-byte callsign trailer shrinks
+// MAX_PACKET_PAYLOAD to 176, which bounds direct-message text at 154 bytes;
+// 152 leaves a safety margin and matches the firmware cap.
+const int maxTextPayloadBytes = 152;
 const int _sendTextMsgOverheadBytes =
     1 + 1 + 1 + 4 + 6 + 1 + 2; // +2 safety margin
 const int _sendChannelTextMsgOverheadBytes =
@@ -555,7 +557,7 @@ Uint8List buildRemoveContactFrame(Uint8List pubKey) {
 // Build CMD_APP_START frame
 // Format: [cmd][app_ver][reserved x6][app_name...]
 Uint8List buildAppStartFrame({
-  String appName = 'MeshCoreOpen',
+  String appName = 'HamCoreOpen',
   int appVersion = 1,
 }) {
   final writer = BufferWriter();

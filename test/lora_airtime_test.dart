@@ -1,10 +1,10 @@
 import 'dart:typed_data';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:meshcore_open/services/image_chunk_transport.dart';
-import 'package:meshcore_open/widgets/image_send_codec_binding.dart';
-import 'package:meshcore_open/models/radio_settings.dart';
-import 'package:meshcore_open/utils/lora_airtime.dart';
+import 'package:hamcore_open/services/image_chunk_transport.dart';
+import 'package:hamcore_open/widgets/image_send_codec_binding.dart';
+import 'package:hamcore_open/models/radio_settings.dart';
+import 'package:hamcore_open/utils/lora_airtime.dart';
 
 double _ms(Duration d) => d.inMicroseconds / 1000.0;
 
@@ -271,14 +271,19 @@ void main() {
         expected +=
             kImageChunkHeaderBytes +
             (i == 0 ? kImageChunkZeroMetadataBytes : 0) +
-            sizes[i];
+            sizes[i] +
+            kMeshCoreOnAirOverheadBytes;
       }
       expect(est.chunkCount, 2);
       expect(est.totalBytes, expected);
-      // Sanity: payload + per-chunk header + the one metadata byte.
+      // Sanity: payload + per-chunk header + the one metadata byte + per-packet
+      // on-air overhead (HamCore callsign trailer).
       expect(
         expected,
-        209 + 2 * kImageChunkHeaderBytes + kImageChunkZeroMetadataBytes,
+        209 +
+            2 * kImageChunkHeaderBytes +
+            kImageChunkZeroMetadataBytes +
+            2 * kMeshCoreOnAirOverheadBytes,
       );
     });
 
@@ -295,7 +300,8 @@ void main() {
           payloadBytes:
               kImageChunkHeaderBytes +
               (i == 0 ? kImageChunkZeroMetadataBytes : 0) +
-              sizes[i],
+              sizes[i] +
+              kMeshCoreOnAirOverheadBytes,
           spreadingFactor: 9,
           bandwidthHz: 250000,
           codingRate: 8,
@@ -310,7 +316,7 @@ void main() {
         radio: _radio(sf: LoRaSpreadingFactor.sf10, cr: LoRaCodingRate.cr4_5),
       );
       final full = loraTimeOnAir(
-        payloadBytes: kImageChunkBlobBytes,
+        payloadBytes: kImageChunkBlobBytes + kMeshCoreOnAirOverheadBytes,
         spreadingFactor: 10,
         bandwidthHz: 250000,
         codingRate: 5,
@@ -341,15 +347,17 @@ void main() {
       final est = estimateSend(payloadBytes: 209, radio: _radio());
       expect(est.chunkCount, 3); // 2 data + parity
       final sizes = imageChunkPayloadSizes(209);
-      const framing = kImageChunkHeaderBytes + kImageParityLengthBytes;
+      // Mirror the estimator's per-packet model exactly: data chunks are
+      // header + body (+ chunk-0 metadata); the parity packet is always a
+      // full blob (its XOR body is zero-padded); every packet carries the
+      // on-air overhead (HamCore callsign trailer).
       final packetBytes = <int>[
-        framing + kImageChunkZeroMetadataBytes + sizes[0],
-        framing + sizes[1],
-        // parity body is as large as the largest data body
-        framing +
-            (sizes[0] + kImageChunkZeroMetadataBytes > sizes[1]
-                ? sizes[0] + kImageChunkZeroMetadataBytes
-                : sizes[1]),
+        kImageChunkHeaderBytes +
+            kImageChunkZeroMetadataBytes +
+            sizes[0] +
+            kMeshCoreOnAirOverheadBytes,
+        kImageChunkHeaderBytes + sizes[1] + kMeshCoreOnAirOverheadBytes,
+        kImageChunkBlobBytes + kMeshCoreOnAirOverheadBytes,
       ];
       var airtime = 0;
       var wall = 0;
@@ -525,10 +533,13 @@ void main() {
             parity: parity,
           );
           final actual = set.blobs.fold<int>(0, (a, b) => a + b.length);
+          // Compare blob structure only: buildImageChunks emits companion
+          // frames, which do not carry the RF callsign trailer.
           final est = estimateSend(
             payloadBytes: payload,
             radio: _radio(),
             parity: parity,
+            onAirOverheadBytes: 0,
           );
           expect(
             est.totalBytes,

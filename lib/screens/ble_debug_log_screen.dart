@@ -339,7 +339,15 @@ class _BleDebugLogScreenState extends State<BleDebugLogScreen> {
         rawHex: _bytesToHex(raw),
       );
     }
-    final payload = raw.sublist(index);
+    var payload = raw.sublist(index);
+    // HamCore (payload version 2) frames end with an 8-byte callsign trailer
+    String? txCallsign;
+    if (payloadVer == 1 && payload.length > 8) {
+      final tail = payload.sublist(payload.length - 8);
+      payload = payload.sublist(0, payload.length - 8);
+      final end = tail.indexOf(0);
+      txCallsign = String.fromCharCodes(end < 0 ? tail : tail.sublist(0, end));
+    }
 
     final title =
         'RX ${_payloadTypeLabel(payloadType)} • ${_routeLabel(routeType)} • v$payloadVer';
@@ -347,7 +355,11 @@ class _BleDebugLogScreenState extends State<BleDebugLogScreen> {
     final pathSummary = pathByteLen > 0
         ? 'Path=${_bytesToHex(pathBytes)}'
         : 'Path=none';
-    final detail = '$summary • $pathSummary • len=${raw.length}';
+    final callsignSummary = txCallsign == null || txCallsign.isEmpty
+        ? ''
+        : ' • de $txCallsign';
+    final detail =
+        '$summary • $pathSummary • len=${raw.length}$callsignSummary';
     return _RawPacketInfo(
       title: title,
       summary: detail,

@@ -3,8 +3,7 @@ import 'dart:convert';
 import 'dart:math' as math;
 
 import 'package:crypto/crypto.dart' as crypto;
-import 'package:meshcore_open/storage/region_store.dart';
-import 'package:pointycastle/export.dart';
+import 'package:hamcore_open/storage/region_store.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:flutter_blue_plus_platform_interface/flutter_blue_plus_platform_interface.dart';
@@ -6349,16 +6348,21 @@ class MeshCoreConnector extends ChangeNotifier {
       final pathLenRaw = reader.readByte();
       final pathByteLen = _decodePathByteLen(pathLenRaw);
       final pathBytes = reader.readBytes(pathByteLen);
-      final payload = reader.readBytes(reader.remaining);
+      final payloadVer = (header >> _phVerShift) & _phVerMask;
+      final (payload, callsign) = _splitCallsignTrailer(
+        reader.readBytes(reader.remaining),
+        payloadVer,
+      );
 
       return _RawPacket(
         header: header,
         routeType: routeType,
         payloadType: (header >> _phTypeShift) & _phTypeMask,
-        payloadVer: (header >> _phVerShift) & _phVerMask,
+        payloadVer: payloadVer,
         pathLenRaw: pathLenRaw,
         pathBytes: pathBytes,
         payload: payload,
+        transmitterCallsign: callsign,
       );
     } catch (e) {
       appLogger.warn('Error parsing raw packet: $e');
@@ -6417,17 +6421,9 @@ class MeshCoreConnector extends ChangeNotifier {
     }
 
     if (cipherText.isEmpty || cipherText.length % 16 != 0) return null;
-    final key16 = Uint8List(16);
-    final keyLen = psk.length < 16 ? psk.length : 16;
-    key16.setRange(0, keyLen, psk);
-
-    final cipher = ECBBlockCipher(AESEngine());
-    cipher.init(false, KeyParameter(key16));
-    final out = Uint8List(cipherText.length);
-    for (var i = 0; i < cipherText.length; i += 16) {
-      cipher.processBlock(cipherText, i, out, i);
-    }
-    return out;
+    // HamCore: the body is plaintext on the air (zero-padded to the cipher
+    // block size); the keyed MAC verified above only identifies the channel.
+    return cipherText;
   }
 
   _ParsedText _splitSenderText(String text) {
@@ -6911,14 +6907,24 @@ class MeshCoreConnector extends ChangeNotifier {
           routeType == _routeTransportDirect) {
         packet.skipBytes(4); // Skip transport-specific bytes
       }
-      //final payloadVer = (header >> 6) & 0x03;
+      final payloadVer = (header >> 6) & 0x03;
       final pathLenRaw = packet.readByte();
       final pathByteLen = _decodePathByteLen(pathLenRaw);
       final pathHashWidth = _decodePathHashWidth(pathLenRaw);
       final pathBytes = packet.readBytes(pathByteLen);
-      final payload = packet.readBytes(packet.remaining);
+      final (payload, _) = _splitCallsignTrailer(
+        packet.readBytes(packet.remaining),
+        payloadVer,
+      );
 
-      final rawPacket = frame.sublist(3);
+      var rawPacket = frame.sublist(3);
+      if (payloadVer == _hamCorePayloadVer &&
+          rawPacket.length > _callsignTrailerSize) {
+        rawPacket = rawPacket.sublist(
+          0,
+          rawPacket.length - _callsignTrailerSize,
+        );
+      }
       switch (payloadType) {
         case payloadTypeADVERT:
           _handlePayloadAdvertReceived(
@@ -7453,6 +7459,30 @@ const int _routeTransportDirect = 0x03;
 const int _payloadTypeGroupText = 0x05;
 const int _cipherMacSize = 2;
 
+// HamCore: RF frames are payload version 2 (header bits 6-7 == 0x01) and end
+// with a fixed 8-byte ASCII station callsign trailer (FCC Part 97.119).
+const int _hamCorePayloadVer = 0x01;
+const int _callsignTrailerSize = 8;
+
+/// Strips the HamCore callsign trailer off a buffer whose LAST 8 bytes are the
+/// trailer, returning (body, callsign). Returns the input unchanged when the
+/// packet is not a HamCore (version 2) frame or is too short.
+(Uint8List, String?) _splitCallsignTrailer(Uint8List bytes, int payloadVer) {
+  if (payloadVer != _hamCorePayloadVer ||
+      bytes.length <= _callsignTrailerSize) {
+    return (bytes, null);
+  }
+  final body = Uint8List.sublistView(
+    bytes,
+    0,
+    bytes.length - _callsignTrailerSize,
+  );
+  final tail = bytes.sublist(bytes.length - _callsignTrailerSize);
+  final end = tail.indexOf(0);
+  final callsign = String.fromCharCodes(end < 0 ? tail : tail.sublist(0, end));
+  return (Uint8List.fromList(body), callsign.isEmpty ? null : callsign);
+}
+
 /// Decodes the firmware's encoded path_len byte into actual byte length.
 /// Bits 0-5: hash count (0-63), Bits 6-7: hash size code (0=1byte ... 3=4bytes).
 int _decodePathByteLen(int pathLenRaw) {
@@ -7498,6 +7528,8 @@ class _RawPacket {
   final int pathLenRaw;
   final Uint8List pathBytes;
   final Uint8List payload;
+  final String?
+  transmitterCallsign; // HamCore: station heard transmitting this frame
 
   _RawPacket({
     required this.header,
@@ -7507,6 +7539,7 @@ class _RawPacket {
     required this.pathLenRaw,
     required this.pathBytes,
     required this.payload,
+    this.transmitterCallsign,
   });
 
   bool get isFlood =>

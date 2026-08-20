@@ -8,7 +8,7 @@
     }
   },
   "@@locale": "uk",
-  "appTitle": "MeshCore Open",
+  "appTitle": "HamCore Open",
   "nav_contacts": "Контакти",
   "nav_channels": "Канали",
   "nav_map": "Карта",
@@ -55,7 +55,7 @@
       }
     }
   },
-  "scanner_title": "MeshCore: Відкритий доступ",
+  "scanner_title": "HamCore: Відкритий доступ",
   "scanner_scanning": "Пошук пристроїв...",
   "scanner_connecting": "Підключення...",
   "scanner_disconnecting": "Відключення...",
@@ -68,8 +68,8 @@
       }
     }
   },
-  "scanner_searchingDevices": "Пошук пристроїв MeshCore...",
-  "scanner_tapToScan": "Натисніть «Сканувати», щоб знайти пристрої MeshCore",
+  "scanner_searchingDevices": "Пошук пристроїв HamCore...",
+  "scanner_tapToScan": "Натисніть «Сканувати», щоб знайти пристрої HamCore",
   "scanner_connectionFailed": "Помилка підключення: {error}",
   "@scanner_connectionFailed": {
     "placeholders": {
@@ -81,7 +81,7 @@
   "scanner_stop": "Стоп",
   "scanner_scan": "Сканувати",
   "device_quickSwitch": "Швидке перемикання",
-  "device_meshcore": "MeshCore",
+  "device_meshcore": "HamCore",
   "settings_title": "Налаштування",
   "settings_deviceInfo": "Інформація про пристрій",
   "settings_appSettings": "Налаштування застосунку",
@@ -120,7 +120,7 @@
   "settings_refreshContacts": "Оновити контакти",
   "settings_refreshContactsSubtitle": "Перезавантажити список контактів з пристрою",
   "settings_rebootDevice": "Перезавантажити пристрій",
-  "settings_rebootDeviceSubtitle": "Перезавантажити пристрій MeshCore",
+  "settings_rebootDeviceSubtitle": "Перезавантажити пристрій HamCore",
   "settings_rebootDeviceConfirm": "Ви впевнені, що хочете перезавантажити пристрій? Вас буде відключено.",
   "settings_debug": "Налагодження",
   "settings_bleDebugLog": "Журнал налагодження BLE",
@@ -128,7 +128,7 @@
   "settings_appDebugLog": "Журнал налагодження застосунку",
   "settings_appDebugLogSubtitle": "Повідомлення налагодження застосунку",
   "settings_about": "Про застосунок",
-  "settings_aboutVersion": "MeshCore Open v{version}",
+  "settings_aboutVersion": "HamCore Open v{version}",
   "@settings_aboutVersion": {
     "placeholders": {
       "version": {
@@ -136,8 +136,8 @@
       }
     }
   },
-  "settings_aboutLegalese": "Проєкт MeshCore Open Source 2026",
-  "settings_aboutDescription": "Клієнт Flutter з відкритим вихідним кодом для пристроїв мережі MeshCore LoRa.",
+  "settings_aboutLegalese": "Проєкт HamCore Open Source 2026",
+  "settings_aboutDescription": "Клієнт Flutter з відкритим вихідним кодом для пристроїв мережі HamCore LoRa.",
   "settings_infoName": "Ім'я",
   "settings_infoId": "Ідентифікатор",
   "settings_infoStatus": "Статус",
@@ -148,7 +148,7 @@
   "settings_presets": "Попередні налаштування",
   "settings_frequency": "Частота (МГц)",
   "settings_frequencyHelper": "300,0 – 2500,0",
-  "settings_frequencyInvalid": "Некоректна частота (300-2500 МГц)",
+  "settings_frequencyInvalid": "Некоректна частота (420-450 / 902-928 МГц)",
   "settings_bandwidth": "Смуга пропускання",
   "settings_spreadingFactor": "Коефіцієнт розширення",
   "settings_codingRate": "Швидкість кодування",
@@ -1084,7 +1084,7 @@
   "repeater_guestPasswordHelper": "Доступ лише для читання з паролем",
   "repeater_radioSettings": "Налаштування радіо",
   "repeater_frequencyMhz": "Частота (МГц)",
-  "repeater_frequencyHelper": "300-2500 МГц",
+  "repeater_frequencyHelper": "420-450 / 902-928 МГц",
   "repeater_txPower": "Потужність TX",
   "repeater_txPowerHelper": "1-30 дБм",
   "repeater_bandwidth": "Смуга пропускання",
@@ -1779,7 +1779,7 @@
   "contacts_zeroHopContactAdvertSent": "Відправлено контакт за оголошенням",
   "contacts_addContactFromClipboard": "Додати контакт з буфера",
   "contacts_ShareContactZeroHop": "Поділитись контактом за оголошенням",
-  "notification_activityTitle": "Активність MeshCore",
+  "notification_activityTitle": "Активність HamCore",
   "notification_messagesCount": "{count} {count, plural, =1{повідомлення} few{повідомлення} many{повідомлень} other{повідомлень}}",
   "notification_channelMessagesCount": "{count} {count, plural, =1{повідомлення каналу} few{повідомлення каналу} many{повідомлень каналу} other{повідомлень каналу}}",
   "notification_newNodesCount": "{count} {count, plural, =1{новий вузол} few{нові вузли} many{нових вузлів} other{нових вузлів}}",
@@ -1797,9 +1797,9 @@
   "settings_gpxExportContacts": "Експорт контактів у GPX",
   "settings_gpxExportRepeatersRoom": "Геопозиції ретрансляторів та серверів кімнат",
   "settings_gpxExportChat": "Геопозиції контактів",
-  "settings_gpxExportShareText": "Дані карти експортовані з meshcore-open",
+  "settings_gpxExportShareText": "Дані карти експортовані з hamcore-open",
   "settings_gpxExportAllContacts": "Усі місця контактів",
-  "settings_gpxExportShareSubject": "експорт даних карти meshcore-open у форматі GPX",
+  "settings_gpxExportShareSubject": "експорт даних карти hamcore-open у форматі GPX",
   "pathTrace_someHopsNoLocation": "Один або декілька переходів не мають даних про геопозицію!",
   "map_tapToAdd": "Натисніть на вузли, щоб додати їх до шляху",
   "map_runTrace": "Виконати трасування шляху",
@@ -1814,7 +1814,7 @@
   "snrIndicator_lastSeen": "Останній раз бачили",
   "snrIndicator_nearByRepeaters": "Найближчі ретранслятори",
   "chat_ShowAllPaths": "Показати всі шляхи",
-  "settings_clientRepeatFreqWarning": "Повтор без підключення до мережі вимагає частоти 433, 869 або 918 МГц.",
+  "settings_clientRepeatFreqWarning": "Повтор без підключення до мережі вимагає частоти 420-450 / 902-928 МГц.",
   "settings_clientRepeatSubtitle": "Дозвольте цьому пристрою повторювати пакети даних для інших пристроїв.",
   "settings_clientRepeat": "Автономна система",
   "settings_aboutOpenMeteoAttribution": "Дані про висоту LOS: Open-Meteo (CC BY 4.0)",
@@ -2032,7 +2032,7 @@
   "discoveredContacts_deleteContactAllContent": "Ви впевнені, що хочете видалити всі виявлені контакти?",
   "map_showGuessedLocations": "Показати геопозиції передбачених вузлів",
   "map_guessedLocation": "Передбачена геопозиція",
-  "usbScreenSubtitle": "Виберіть виявлений USB-пристрій і підключіть його безпосередньо до вашого вузла MeshCore.",
+  "usbScreenSubtitle": "Виберіть виявлений USB-пристрій і підключіть його безпосередньо до вашого вузла HamCore.",
   "usbScreenTitle": "Підключити через USB",
   "connectionChoiceBluetoothLabel": "Bluetooth",
   "connectionChoiceUsbLabel": "USB",
@@ -2342,7 +2342,7 @@
   "repeater_cliHelpStatsPackets": "(Тільки для серійного використання) Відображає статистику на рівні пакетів.",
   "repeater_cliHelpStatsRadio": "(Тільки для серій) Відображає радіостатистику.",
   "repeater_cliHelpStatsCore": "(Тільки для серійного використання) Відображає основні статистичні дані про програмне забезпечення.",
-  "background_serviceTitle": "MeshCore працює",
+  "background_serviceTitle": "HamCore працює",
   "background_serviceText": "Підтримує з'єднання BLE",
   "appSettings_translationModelDeleted": "Видалено {name}",
   "appSettings_translationModelDeleteFailed": "Не вдалось видалити: {error}",

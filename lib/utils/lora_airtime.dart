@@ -33,7 +33,8 @@ export '../services/image_chunk_transport.dart'
 /// the resulting airtime is therefore a lower bound for the chunk frame itself
 /// (header + payload). Callers may pass a measured value to
 /// [estimateSend] once the real overhead is known. Do not guess it here.
-const int kMeshCoreOnAirOverheadBytes = 0;
+// HamCore: every RF frame carries an 8-byte callsign trailer (Part 97.119).
+const int kMeshCoreOnAirOverheadBytes = 8;
 
 /// MeshCore MAX_TRANS_UNIT — the largest packet that can go on air.
 /// Useful as a worst-case airtime reference.

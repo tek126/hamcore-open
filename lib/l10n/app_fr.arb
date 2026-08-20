@@ -8,7 +8,7 @@
     }
   },
   "@@locale": "fr",
-  "appTitle": "MeshCore Open",
+  "appTitle": "HamCore Open",
   "nav_contacts": "Contacts",
   "nav_channels": "Canaux",
   "nav_map": "Carte",
@@ -54,7 +54,7 @@
       }
     }
   },
-  "scanner_title": "MeshCore Open",
+  "scanner_title": "HamCore Open",
   "scanner_scanning": "Recherche de périphériques...",
   "scanner_connecting": "Connexion en cours...",
   "scanner_disconnecting": "Déconnexion...",
@@ -67,8 +67,8 @@
       }
     }
   },
-  "scanner_searchingDevices": "Recherche des appareils MeshCore...",
-  "scanner_tapToScan": "Appuyez sur Scanner pour trouver les appareils MeshCore",
+  "scanner_searchingDevices": "Recherche des appareils HamCore...",
+  "scanner_tapToScan": "Appuyez sur Scanner pour trouver les appareils HamCore",
   "scanner_connectionFailed": "Échec de la connexion : {error}",
   "@scanner_connectionFailed": {
     "placeholders": {
@@ -80,7 +80,7 @@
   "scanner_stop": "Arrêter",
   "scanner_scan": "Scanner",
   "device_quickSwitch": "Basculement rapide",
-  "device_meshcore": "MeshCore",
+  "device_meshcore": "HamCore",
   "settings_title": "Paramètres",
   "settings_deviceInfo": "Informations du périphérique",
   "settings_appSettings": "Paramètres de l'application",
@@ -119,7 +119,7 @@
   "settings_refreshContacts": "Actualiser les contacts",
   "settings_refreshContactsSubtitle": "Recharger la liste des contacts depuis l'appareil",
   "settings_rebootDevice": "Redémarrer l'appareil",
-  "settings_rebootDeviceSubtitle": "Redémarrer l'appareil MeshCore",
+  "settings_rebootDeviceSubtitle": "Redémarrer l'appareil HamCore",
   "settings_rebootDeviceConfirm": "Êtes-vous sûr de vouloir redémarrer l'appareil ? Vous serez déconnecté.",
   "settings_debug": "Débogage",
   "settings_bleDebugLog": "Journal de débogage du compagnon",
@@ -127,7 +127,7 @@
   "settings_appDebugLog": "Journal de débogage de l'application",
   "settings_appDebugLogSubtitle": "Messages de débogage de l'application",
   "settings_about": "À propos",
-  "settings_aboutVersion": "MeshCore Open v{version}",
+  "settings_aboutVersion": "HamCore Open v{version}",
   "@settings_aboutVersion": {
     "placeholders": {
       "version": {
@@ -135,8 +135,8 @@
       }
     }
   },
-  "settings_aboutLegalese": "Projet open source MeshCore 2026",
-  "settings_aboutDescription": "Client Flutter open source pour les appareils de réseau maillé LoRa MeshCore.",
+  "settings_aboutLegalese": "Projet open source HamCore 2026",
+  "settings_aboutDescription": "Client Flutter open source pour les appareils de réseau maillé LoRa HamCore.",
   "settings_infoName": "Nom",
   "settings_infoId": "ID",
   "settings_infoStatus": "État",
@@ -147,7 +147,7 @@
   "settings_presets": "Préréglages",
   "settings_frequency": "Fréquence (MHz)",
   "settings_frequencyHelper": "300,0 - 2 500,0",
-  "settings_frequencyInvalid": "Fréquence invalide (300-2500 MHz)",
+  "settings_frequencyInvalid": "Fréquence invalide (420-450 / 902-928 MHz)",
   "settings_bandwidth": "Bande passante",
   "settings_spreadingFactor": "Facteur d'étalement (SF)",
   "settings_codingRate": "Taux de codage (CR)",
@@ -1096,7 +1096,7 @@
   "repeater_guestPasswordHelper": "Accès en lecture seule avec mot de passe",
   "repeater_radioSettings": "Paramètres Radio",
   "repeater_frequencyMhz": "Fréquence (MHz)",
-  "repeater_frequencyHelper": "300-2500 MHz",
+  "repeater_frequencyHelper": "420-450 / 902-928 MHz",
   "repeater_txPower": "TX Puissance",
   "repeater_txPowerHelper": "1 à 30 dBm",
   "repeater_bandwidth": "Bande passante",
@@ -1868,7 +1868,7 @@
   "contacts_contactAdvertCopyFailed": "La copie de l'annonce vers le presse-papiers a échoué.",
   "contacts_zeroHopContactAdvertSent": "Envoyer un contact par annonce.",
   "contacts_zeroHopContactAdvertFailed": "Échec de l'envoi du contact.",
-  "notification_activityTitle": "Activité MeshCore",
+  "notification_activityTitle": "Activité HamCore",
   "notification_messagesCount": "{count} {count, plural, =1{message} other{messages}}",
   "notification_channelMessagesCount": "{count} {count, plural, =1{message de canal} other{messages de canal}}",
   "notification_newNodesCount": "{count} {count, plural, =1{nouveau nœud} other{nouveaux nœuds}}",
@@ -1908,8 +1908,8 @@
   "settings_gpxExportChat": "Emplacements des compagnons",
   "settings_gpxExportSuccess": "Fichier GPX exporté avec succès.",
   "settings_gpxExportAllContacts": "Tous les emplacements des contacts",
-  "settings_gpxExportShareText": "Données de carte exportées à partir de meshcore-open",
-  "settings_gpxExportShareSubject": "meshcore-open exporter les données de carte GPX",
+  "settings_gpxExportShareText": "Données de carte exportées à partir de hamcore-open",
+  "settings_gpxExportShareSubject": "hamcore-open exporter les données de carte GPX",
   "pathTrace_someHopsNoLocation": "Un ou plusieurs des sauts manquent d'une localisation !",
   "map_tapToAdd": "Appuyez sur les nœuds pour les ajouter au chemin.",
   "pathTrace_clearTooltip": "Effacer le chemin",
@@ -1924,7 +1924,7 @@
   "snrIndicator_lastSeen": "Vu pour la dernière fois",
   "snrIndicator_nearByRepeaters": "Répéteurs à proximité",
   "chat_ShowAllPaths": "Afficher tous les chemins",
-  "settings_clientRepeatFreqWarning": "Pour les transmissions hors réseau, il est nécessaire d'utiliser les fréquences de 433, 869 ou 918 MHz.",
+  "settings_clientRepeatFreqWarning": "Pour les transmissions hors réseau, il est nécessaire d'utiliser les fréquences de 420-450 / 902-928 MHz.",
   "settings_clientRepeatSubtitle": "Permettre à cet appareil de relayer les paquets du maillage pour les autres.",
   "settings_clientRepeat": "Répétition hors réseau",
   "settings_aboutOpenMeteoAttribution": "Données d'élévation LOS : Open-Meteo (CC BY 4.0)",
@@ -2145,7 +2145,7 @@
   "connectionChoiceUsbLabel": "USB",
   "usbScreenTitle": "Connectez via USB",
   "connectionChoiceBluetoothLabel": "Bluetooth",
-  "usbScreenSubtitle": "Sélectionnez un périphérique série détecté et connectez-vous directement à votre nœud MeshCore.",
+  "usbScreenSubtitle": "Sélectionnez un périphérique série détecté et connectez-vous directement à votre nœud HamCore.",
   "usbScreenStatus": "Sélectionnez un périphérique USB",
   "usbScreenNote": "La communication série USB est active sur les appareils Android et les plateformes de bureau compatibles.",
   "usbScreenEmptyState": "Aucun périphérique USB n'a été trouvé. Veuillez en brancher un et rafraîchir la page.",
@@ -2460,7 +2460,7 @@
   "repeater_cliHelpStatsRadio": "(Uniquement pour les séries) Affiche les statistiques de la radio.",
   "repeater_cliHelpStatsCore": "(Uniquement pour les séries) Affiche les statistiques du micrologicem intégré.",
   "common_done": "Terminé",
-  "background_serviceTitle": "MeshCore en cours d'exécution",
+  "background_serviceTitle": "HamCore en cours d'exécution",
   "background_serviceText": "Maintien de la connexion BLE",
   "appSettings_translationModelDeleted": "Supprimé {name}",
   "@appSettings_translationModelDeleted": {

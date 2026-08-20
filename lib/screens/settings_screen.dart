@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart';
+import 'package:hamcore_open/helpers/callsign.dart';
 import 'package:flutter/material.dart';
-import 'package:meshcore_open/utils/gpx_export.dart';
-import 'package:meshcore_open/widgets/elements_ui.dart';
+import 'package:hamcore_open/utils/gpx_export.dart';
+import 'package:hamcore_open/widgets/elements_ui.dart';
 import 'package:provider/provider.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -750,6 +751,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
           controller: controller,
           decoration: InputDecoration(
             hintText: l10n.settings_nodeNameHint,
+            helperText: 'Must start with your callsign (e.g. W1AW or W1AW-2)',
+            helperMaxLines: 2,
             border: const OutlineInputBorder(),
           ),
           maxLength: 31,
@@ -764,7 +767,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             builder: (context, _) {
               final name = controller.text.trim();
               return TextButton(
-                onPressed: name.isEmpty
+                onPressed: name.isEmpty || !isValidCallsignName(name)
                     ? null
                     : () async {
                         Navigator.pop(context);
@@ -1467,7 +1470,7 @@ class _RadioSettingsDialogState extends State<_RadioSettingsDialog> {
       _frequencyController.text = (widget.connector.currentFreqHz! / 1000.0)
           .toStringAsFixed(3);
     } else {
-      _frequencyController.text = '915.0';
+      _frequencyController.text = '906.875';
     }
 
     if (widget.connector.currentBwHz != null) {
@@ -1569,7 +1572,7 @@ class _RadioSettingsDialogState extends State<_RadioSettingsDialog> {
   }
 
   _RadioSettingsSnapshot _currentSnapshot() {
-    final frequencyMHz = double.tryParse(_frequencyController.text) ?? 915.0;
+    final frequencyMHz = double.tryParse(_frequencyController.text) ?? 906.875;
     final txPowerDbm = int.tryParse(_txPowerController.text) ?? 20;
     return _RadioSettingsSnapshot(
       frequencyMHz: frequencyMHz,
@@ -1586,15 +1589,13 @@ class _RadioSettingsDialogState extends State<_RadioSettingsDialog> {
   }
 
   double _offGridFrequencyForBaseFrequency(double baseFrequencyMHz) {
-    if (baseFrequencyMHz < 500) return 433.0;
-    if (baseFrequencyMHz < 900) return 869.0;
-    return 918.0;
+    if (baseFrequencyMHz < 500) return 433.5;
+    return 906.875;
   }
 
   double _normalFrequencyForBand(double frequencyMHz) {
-    if (frequencyMHz < 500) return 433.650;
-    if (frequencyMHz < 900) return 869.432;
-    return 915.8;
+    if (frequencyMHz < 500) return 433.5;
+    return 906.875;
   }
 
   _RadioSettingsSnapshot _fallbackNonRepeatSnapshot(
@@ -1729,7 +1730,7 @@ class _RadioSettingsDialogState extends State<_RadioSettingsDialog> {
   void _validateFields() {
     final l10n = context.l10n;
     final freqMHz = double.tryParse(_frequencyController.text);
-    _frequencyError = (freqMHz == null || freqMHz < 300 || freqMHz > 2500)
+    _frequencyError = (freqMHz == null || !isHamFrequencyMHz(freqMHz))
         ? l10n.settings_frequencyInvalid
         : null;
 
@@ -1773,7 +1774,7 @@ class _RadioSettingsDialogState extends State<_RadioSettingsDialog> {
     final freqMHz = double.tryParse(_frequencyController.text);
     final txPower = int.tryParse(_txPowerController.text);
 
-    if (freqMHz == null || freqMHz < 300 || freqMHz > 2500) {
+    if (freqMHz == null || !isHamFrequencyMHz(freqMHz)) {
       showDismissibleSnackBar(
         context,
         content: Text(l10n.settings_frequencyInvalid),
@@ -1803,8 +1804,9 @@ class _RadioSettingsDialogState extends State<_RadioSettingsDialog> {
     final knownRepeat = widget.connector.clientRepeat != null;
 
     if (knownRepeat) {
-      const validRepeatFreqsKHz = {433000, 869000, 918000};
-      if (_clientRepeat && !validRepeatFreqsKHz.contains(freqHz)) {
+      bool inHamRepeatRange(int khz) =>
+          (khz >= 420000 && khz <= 450000) || (khz >= 902000 && khz <= 928000);
+      if (_clientRepeat && !inHamRepeatRange(freqHz)) {
         showDismissibleSnackBar(
           context,
           content: Text(l10n.settings_clientRepeatFreqWarning),

@@ -1,6 +1,6 @@
 {
   "@@locale": "ja",
-  "appTitle": "MeshCore Open",
+  "appTitle": "HamCore Open",
   "nav_contacts": "連絡先",
   "nav_channels": "チャンネル",
   "nav_map": "地図",
@@ -54,7 +54,7 @@
       }
     }
   },
-  "scanner_title": "MeshCore Open",
+  "scanner_title": "HamCore Open",
   "connectionChoiceUsbLabel": "USB",
   "connectionChoiceBluetoothLabel": "Bluetooth",
   "connectionChoiceTcpLabel": "TCP",
@@ -85,7 +85,7 @@
     }
   },
   "usbScreenTitle": "USB経由で接続",
-  "usbScreenSubtitle": "検出されたシリアルデバイスを選択して、MeshCore ノードに直接接続します。",
+  "usbScreenSubtitle": "検出されたシリアルデバイスを選択して、HamCore ノードに直接接続します。",
   "usbScreenStatus": "USB デバイスを選択してください",
   "usbScreenNote": "USB シリアルは、対応する Android デバイスとデスクトップ プラットフォームで利用できます。",
   "usbScreenEmptyState": "USB デバイスが見つかりません。接続してから再度更新してください。",
@@ -125,8 +125,8 @@
       }
     }
   },
-  "scanner_searchingDevices": "MeshCore デバイスを検索中...",
-  "scanner_tapToScan": "MeshCore デバイスを見つけるには、「スキャン」をタップしてください。",
+  "scanner_searchingDevices": "HamCore デバイスを検索中...",
+  "scanner_tapToScan": "HamCore デバイスを見つけるには、「スキャン」をタップしてください。",
   "scanner_connectionFailed": "接続に失敗しました：{error}",
   "@scanner_connectionFailed": {
     "placeholders": {
@@ -143,7 +143,7 @@
   "scanner_chromeRequiredMessage": "このWebアプリケーションは、Bluetooth機能を利用するために、Google ChromeまたはChromiumベースのブラウザが必要です。",
   "scanner_enableBluetooth": "Bluetooth を有効にする",
   "device_quickSwitch": "クイックスイッチ",
-  "device_meshcore": "MeshCore",
+  "device_meshcore": "HamCore",
   "settings_title": "設定",
   "settings_deviceInfo": "デバイス情報",
   "settings_appSettings": "アプリ設定",
@@ -188,7 +188,7 @@
   "settings_refreshContacts": "連絡先を更新",
   "settings_refreshContactsSubtitle": "デバイスから連絡先リストを再読み込みします",
   "settings_rebootDevice": "デバイスを再起動",
-  "settings_rebootDeviceSubtitle": "MeshCore デバイスを再起動します",
+  "settings_rebootDeviceSubtitle": "HamCore デバイスを再起動します",
   "settings_rebootDeviceConfirm": "本当にデバイスを再起動したいですか？ その場合、接続が切断されます。",
   "settings_debug": "デバッグ",
   "settings_bleDebugLog": "BLE デバッグログ",
@@ -196,7 +196,7 @@
   "settings_appDebugLog": "アプリのデバッグログ",
   "settings_appDebugLogSubtitle": "アプリケーションのデバッグメッセージ",
   "settings_about": "概要",
-  "settings_aboutVersion": "MeshCore Open v{version}",
+  "settings_aboutVersion": "HamCore Open v{version}",
   "@settings_aboutVersion": {
     "placeholders": {
       "version": {
@@ -204,8 +204,8 @@
       }
     }
   },
-  "settings_aboutLegalese": "2026 MeshCore オープンソースプロジェクト",
-  "settings_aboutDescription": "MeshCore LoRa メッシュネットワークデバイス向けのオープンソース Flutter クライアント。",
+  "settings_aboutLegalese": "2026 HamCore オープンソースプロジェクト",
+  "settings_aboutDescription": "HamCore LoRa メッシュネットワークデバイス向けのオープンソース Flutter クライアント。",
   "settings_aboutOpenMeteoAttribution": "LOS 標高データ：Open-Meteo (CC BY 4.0)",
   "settings_infoName": "名前",
   "settings_infoId": "ID",
@@ -216,8 +216,8 @@
   "settings_infoChannelCount": "チャンネル数",
   "settings_presets": "プリセット",
   "settings_frequency": "周波数 (MHz)",
-  "settings_frequencyHelper": "300.0 - 2500.0",
-  "settings_frequencyInvalid": "無効な周波数 (300-2500 MHz)",
+  "settings_frequencyHelper": "420-450 / 902-928",
+  "settings_frequencyInvalid": "無効な周波数 (420-450 / 902-928 MHz)",
   "settings_bandwidth": "帯域幅",
   "settings_spreadingFactor": "伝播係数",
   "settings_codingRate": "コーディング速度",
@@ -226,7 +226,7 @@
   "settings_txPowerInvalid": "無効な送信電力 (0-22 dBm)",
   "settings_clientRepeat": "オフグリッド中継",
   "settings_clientRepeatSubtitle": "このデバイスが他のデバイス向けにメッシュパケットを中継できるようにします。",
-  "settings_clientRepeatFreqWarning": "オフグリッド中継には 433、869、または 918 MHz の周波数が必要です。",
+  "settings_clientRepeatFreqWarning": "オフグリッド中継には 420-450 / 902-928 MHz の周波数が必要です。",
   "settings_error": "エラー: {message}",
   "@settings_error": {
     "placeholders": {
@@ -2210,8 +2210,8 @@
   "settings_gpxExportRepeatersRoom": "リピータ/ルームサーバーの位置情報",
   "settings_gpxExportChat": "関連施設",
   "settings_gpxExportAllContacts": "すべての連絡先場所",
-  "settings_gpxExportShareText": "meshcore-openからエクスポートされた地図データ",
-  "settings_gpxExportShareSubject": "meshcore-open GPX形式の地図データのエクスポート",
+  "settings_gpxExportShareText": "hamcore-openからエクスポートされた地図データ",
+  "settings_gpxExportShareSubject": "hamcore-open GPX形式の地図データのエクスポート",
   "snrIndicator_nearByRepeaters": "近くのリピータ",
   "snrIndicator_lastSeen": "最後に確認された場所",
   "contactsSettings_title": "連絡先設定",
@@ -2466,7 +2466,7 @@
   "repeater_cliHelpStatsRadio": "（シリーズのみ）ラジオの統計情報を表示します。",
   "repeater_cliHelpStatsCore": "（シリアルのみ）主要なファームウェアの統計情報を表示します。",
   "common_done": "完了",
-  "background_serviceTitle": "MeshCore 実行中",
+  "background_serviceTitle": "HamCore 実行中",
   "background_serviceText": "BLE 接続を維持しています",
   "appSettings_translationModelDeleted": "{name} を削除しました",
   "@appSettings_translationModelDeleted": {

@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  "appTitle": "MeshCore Open",
+  "appTitle": "HamCore Open",
   "nav_contacts": "Contacts",
   "nav_channels": "Channels",
   "nav_map": "Map",
@@ -55,7 +55,7 @@
   },
   "common_autoRefresh": "Autorefresh",
   "common_interval": "Interval",
-  "scanner_title": "MeshCore Open",
+  "scanner_title": "HamCore Open",
   "connectionChoiceUsbLabel": "USB",
   "connectionChoiceBluetoothLabel": "Bluetooth",
   "connectionChoiceTcpLabel": "TCP",
@@ -86,7 +86,7 @@
     }
   },
   "usbScreenTitle": "Connect over USB",
-  "usbScreenSubtitle": "Choose a detected serial device and connect directly to your MeshCore node.",
+  "usbScreenSubtitle": "Choose a detected serial device and connect directly to your HamCore node.",
   "usbScreenStatus": "Select a USB device",
   "usbScreenNote": "USB serial is active on supported Android devices and desktop platforms.",
   "usbScreenEmptyState": "No USB devices found. Plug one in and refresh.",
@@ -126,8 +126,8 @@
       }
     }
   },
-  "scanner_searchingDevices": "Searching for MeshCore devices...",
-  "scanner_tapToScan": "Tap Scan to find MeshCore devices",
+  "scanner_searchingDevices": "Searching for HamCore devices...",
+  "scanner_tapToScan": "Tap Scan to find HamCore devices",
   "scanner_connectionFailed": "Connection failed: {error}",
   "@scanner_connectionFailed": {
     "placeholders": {
@@ -145,7 +145,7 @@
   "scanner_enableBluetooth": "Enable Bluetooth",
   "scanner_bluetoothWebUnsupported": "Bluetooth isn't available in the browser. Connect over USB instead.",
   "device_quickSwitch": "Quick switch",
-  "device_meshcore": "MeshCore",
+  "device_meshcore": "HamCore",
   "settings_title": "Settings",
   "settings_deviceInfo": "Device Info",
   "settings_appSettings": "App Settings",
@@ -222,7 +222,7 @@
   "settings_refreshContacts": "Refresh Contacts",
   "settings_refreshContactsSubtitle": "Reload contact list from device",
   "settings_rebootDevice": "Reboot Device",
-  "settings_rebootDeviceSubtitle": "Restart the MeshCore device",
+  "settings_rebootDeviceSubtitle": "Restart the HamCore device",
   "settings_rebootDeviceConfirm": "Are you sure you want to reboot the device? You will be disconnected.",
   "settings_debug": "Debug",
   "settings_companionDebugLog": "Companion Debug Log",
@@ -230,7 +230,7 @@
   "settings_appDebugLog": "App Debug Log",
   "settings_appDebugLogSubtitle": "Application debug messages",
   "settings_about": "About",
-  "settings_aboutVersion": "MeshCore Open v{version}",
+  "settings_aboutVersion": "HamCore Open v{version}",
   "@settings_aboutVersion": {
     "placeholders": {
       "version": {
@@ -238,8 +238,8 @@
       }
     }
   },
-  "settings_aboutLegalese": "2026 MeshCore Open Source Project",
-  "settings_aboutDescription": "An open-source Flutter client for MeshCore LoRa mesh networking devices.",
+  "settings_aboutLegalese": "2026 HamCore Open Source Project",
+  "settings_aboutDescription": "An open-source Flutter client for HamCore LoRa mesh networking devices.",
   "settings_aboutOpenMeteoAttribution": "LOS elevation data: Open-Meteo (CC BY 4.0)",
   "settings_infoName": "Name",
   "settings_infoId": "ID",
@@ -252,8 +252,8 @@
   "settings_infoFirmware": "Firmware",
   "settings_presets": "Presets",
   "settings_frequency": "Frequency (MHz)",
-  "settings_frequencyHelper": "300.0 - 2500.0",
-  "settings_frequencyInvalid": "Invalid frequency (300-2500 MHz)",
+  "settings_frequencyHelper": "420-450 / 902-928",
+  "settings_frequencyInvalid": "Invalid frequency (420-450 / 902-928 MHz)",
   "settings_bandwidth": "Bandwidth",
   "settings_spreadingFactor": "Spreading Factor",
   "settings_codingRate": "Coding Rate",
@@ -262,7 +262,7 @@
   "settings_txPowerInvalid": "Invalid TX power (0-22 dBm)",
   "settings_clientRepeat": "Off-Grid Repeat",
   "settings_clientRepeatSubtitle": "Allow this device to repeat mesh packets for others",
-  "settings_clientRepeatFreqWarning": "Off-grid repeat requires 433, 869, or 918 MHz frequency",
+  "settings_clientRepeatFreqWarning": "Off-grid repeat requires 420-450 / 902-928 MHz frequency",
   "settings_error": "Error: {message}",
   "@settings_error": {
     "placeholders": {
@@ -1388,7 +1388,7 @@
   "repeater_guestPasswordHelper": "Read-only access password",
   "repeater_radioSettings": "Radio Settings",
   "repeater_frequencyMhz": "Frequency (MHz)",
-  "repeater_frequencyHelper": "300-2500 MHz",
+  "repeater_frequencyHelper": "420-450 / 902-928 MHz",
   "repeater_txPower": "TX Power",
   "repeater_txPowerHelper": "1-30 dBm",
   "repeater_bandwidth": "Bandwidth",
@@ -2403,7 +2403,7 @@
   "contacts_zeroHopContactAdvertFailed": "Failed to send contact.",
   "contacts_contactAdvertCopied": "Advert copied to Clipboard.",
   "contacts_contactAdvertCopyFailed": "Copying advert to Clipboard failed.",
-  "notification_activityTitle": "MeshCore Activity",
+  "notification_activityTitle": "HamCore Activity",
   "notification_messagesCount": "{count} {count, plural, =1{message} other{messages}}",
   "@notification_messagesCount": {
     "placeholders": {
@@ -2450,8 +2450,8 @@
   "settings_gpxExportRepeatersRoom": "Repeater & room server locations",
   "settings_gpxExportChat": "Companion locations",
   "settings_gpxExportAllContacts": "All contacts locations",
-  "settings_gpxExportShareText": "Map data exported from meshcore-open",
-  "settings_gpxExportShareSubject": "meshcore-open GPX map data export",
+  "settings_gpxExportShareText": "Map data exported from hamcore-open",
+  "settings_gpxExportShareSubject": "hamcore-open GPX map data export",
   "snrIndicator_nearByRepeaters": "Nearby Repeaters",
   "snrIndicator_lastSeen": "Last seen",
   "contactsSettings_title": "Contacts settings",
@@ -2606,7 +2606,7 @@
   },
   "translation_translationOptions": "Translation options",
   "translation_systemLanguage": "System language",
-  "background_serviceTitle": "MeshCore running",
+  "background_serviceTitle": "HamCore running",
   "background_serviceText": "Keeping BLE connected",
   "appSettings_translationModelDeleted": "Deleted {name}",
   "@appSettings_translationModelDeleted": {

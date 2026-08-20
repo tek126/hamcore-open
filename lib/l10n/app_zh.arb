@@ -8,7 +8,7 @@
     }
   },
   "@@locale": "zh",
-  "appTitle": "MeshCore Open",
+  "appTitle": "HamCore Open",
   "nav_contacts": "联系人",
   "nav_channels": "频道",
   "nav_map": "地图",
@@ -68,8 +68,8 @@
       }
     }
   },
-  "scanner_searchingDevices": "正在搜索 MeshCore 设备...",
-  "scanner_tapToScan": "点击“扫描”按钮以查找 MeshCore 设备。",
+  "scanner_searchingDevices": "正在搜索 HamCore 设备...",
+  "scanner_tapToScan": "点击“扫描”按钮以查找 HamCore 设备。",
   "scanner_connectionFailed": "连接失败：{error}",
   "@scanner_connectionFailed": {
     "placeholders": {
@@ -124,7 +124,7 @@
   "settings_refreshContacts": "刷新联系人",
   "settings_refreshContactsSubtitle": "从设备重新加载联系人列表",
   "settings_rebootDevice": "重启设备",
-  "settings_rebootDeviceSubtitle": "重启 MeshCore 设备",
+  "settings_rebootDeviceSubtitle": "重启 HamCore 设备",
   "settings_rebootDeviceConfirm": "确定要重启设备吗？这将断开与设备的连接。",
   "settings_debug": "调试",
   "settings_bleDebugLog": "BLE 调试日志",
@@ -132,7 +132,7 @@
   "settings_appDebugLog": "应用调试日志",
   "settings_appDebugLogSubtitle": "应用调试消息",
   "settings_about": "关于",
-  "settings_aboutVersion": "MeshCore Open v{version}",
+  "settings_aboutVersion": "HamCore Open v{version}",
   "@settings_aboutVersion": {
     "placeholders": {
       "version": {
@@ -140,8 +140,8 @@
       }
     }
   },
-  "settings_aboutLegalese": "2026 MeshCore 开源项目",
-  "settings_aboutDescription": "一个开源的 Flutter 客户端，用于 MeshCore LoRa 无线网络设备。",
+  "settings_aboutLegalese": "2026 HamCore 开源项目",
+  "settings_aboutDescription": "一个开源的 Flutter 客户端，用于 HamCore LoRa 无线网络设备。",
   "settings_infoName": "名称",
   "settings_infoId": "MAC ID",
   "settings_infoStatus": "状态",
@@ -154,8 +154,8 @@
   "settings_preset868Mhz": "868 MHz",
   "settings_preset433Mhz": "433 MHz",
   "settings_frequency": "频率 (MHz)",
-  "settings_frequencyHelper": "300.0 - 2500.0",
-  "settings_frequencyInvalid": "无效频率范围（300-2500 MHz）",
+  "settings_frequencyHelper": "420-450 / 902-928",
+  "settings_frequencyInvalid": "无效频率范围（420-450 / 902-928 MHz）",
   "settings_bandwidth": "带宽",
   "settings_spreadingFactor": "扩频因子",
   "settings_codingRate": "编码速率",
@@ -1104,7 +1104,7 @@
   "repeater_guestPasswordHelper": "只读访问密码",
   "repeater_radioSettings": "无线电设置",
   "repeater_frequencyMhz": "频率 (MHz)",
-  "repeater_frequencyHelper": "300-2500 兆赫",
+  "repeater_frequencyHelper": "420-450 / 902-928 兆赫",
   "repeater_txPower": "TX 功率",
   "repeater_txPowerHelper": "1-30 dBm",
   "repeater_bandwidth": "带宽",
@@ -1774,7 +1774,7 @@
   "contacts_zeroHopContactAdvertFailed": "发送联系人广播失败。",
   "contacts_contactAdvertCopied": "广播已复制到剪贴板。",
   "contacts_contactAdvertCopyFailed": "复制广播到剪贴板失败。",
-  "notification_activityTitle": "MeshCore 活动",
+  "notification_activityTitle": "HamCore 活动",
   "notification_messagesCount": "{count} 条消息",
   "notification_channelMessagesCount": "{count} 条频道消息",
   "notification_newNodesCount": "{count} 个新节点",
@@ -1793,8 +1793,8 @@
   "settings_gpxExportAllSubtitle": "导出所有带位置的联系人到 GPX 文件",
   "settings_gpxExportAllContacts": "所有联系人位置",
   "settings_gpxExportNoContacts": "没有可导出的联系人",
-  "settings_gpxExportShareText": "来自 MeshCore Open 的地图数据导出",
-  "settings_gpxExportShareSubject": "MeshCore Open GPX 地图数据导出",
+  "settings_gpxExportShareText": "来自 HamCore Open 的地图数据导出",
+  "settings_gpxExportShareSubject": "HamCore Open GPX 地图数据导出",
   "pathTrace_someHopsNoLocation": "某些跳缺少位置信息！",
   "map_tapToAdd": "点击节点以添加到路径",
   "pathTrace_clearTooltip": "清除路径",
@@ -1811,7 +1811,7 @@
   "chat_ShowAllPaths": "显示所有路径",
   "settings_clientRepeat": "离网重复",
   "settings_clientRepeatSubtitle": "允许此设备重复发送网状数据包给其他设备",
-  "settings_clientRepeatFreqWarning": "离网重复通信需要使用 433、869 或 918 兆赫兹的频率。",
+  "settings_clientRepeatFreqWarning": "离网重复通信需要使用 420-450 / 902-928 兆赫兹的频率。",
   "settings_aboutOpenMeteoAttribution": "LOS 高程数据:Open-Meteo (CC BY 4.0)",
   "appSettings_unitsTitle": "单位",
   "appSettings_unitsMetric": "公制（米/公里）",
@@ -2029,7 +2029,7 @@
   "map_guessedLocation": "猜测的位置",
   "connectionChoiceUsbLabel": "USB",
   "usbScreenTitle": "通过USB连接",
-  "usbScreenSubtitle": "选择已检测到的串行设备，并直接连接到您的 MeshCore 节点。",
+  "usbScreenSubtitle": "选择已检测到的串行设备，并直接连接到您的 HamCore 节点。",
   "connectionChoiceBluetoothLabel": "蓝牙",
   "usbScreenStatus": "选择一个 USB 设备",
   "usbScreenNote": "USB 串行接口在支持的 Android 设备和桌面平台上处于活动状态。",
@@ -2339,7 +2339,7 @@
   "repeater_cliHelpStatsRadio": "（仅显示序列信息）显示收音机相关统计数据。",
   "repeater_cliHelpStatsCore": "（仅显示序列号）显示核心固件统计信息。",
   "common_done": "Done",
-  "background_serviceTitle": "MeshCore running",
+  "background_serviceTitle": "HamCore running",
   "background_serviceText": "Keeping BLE connected",
   "appSettings_translationModelDeleted": "Deleted {name}",
   "@appSettings_translationModelDeleted": {

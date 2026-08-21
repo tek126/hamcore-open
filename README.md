@@ -120,7 +120,13 @@ Upstream project website: [meshcoreopen.org](https://meshcoreopen.org/)
 - A LoRa device flashed with [HamCore firmware](https://github.com/tek126/hamcore)
 - A US amateur radio license (Technician or higher) to transmit
 
-### Installation
+### Just want the app?
+
+- **Android (APK):** [kc2kvy.com/hamcore](https://kc2kvy.com/hamcore/)
+- **iPhone (TestFlight):** [testflight.apple.com/join/3rjqusNP](https://testflight.apple.com/join/3rjqusNP) — install Apple's TestFlight app first
+- **Browser (Chrome/Edge):** [kc2kvy.com/hamcore/web](https://kc2kvy.com/hamcore/web/)
+
+### Installation (from source)
 
 1. **Clone the repository**
 

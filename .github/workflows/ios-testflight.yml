@@ -30,7 +30,7 @@ on:
 
 jobs:
   ios-testflight:
-    runs-on: macos-15
+    runs-on: macos-latest   # matches the green ios CI job (macos-26 image; its CocoaPods handles the onnxruntime modular-headers case)
     timeout-minutes: 90
     env:
       ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
@@ -55,7 +55,6 @@ jobs:
       - name: Generate Xcode config and install pods
         run: |
           flutter build ios --release --config-only --build-number=${{ github.run_number }}
-          pod install --project-directory=ios
 
       - name: Archive (cloud-managed signing)
         run: |

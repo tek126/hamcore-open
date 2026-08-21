@@ -259,6 +259,15 @@ For issues, questions, or feature requests, please open an issue on GitHub:
 <https://github.com/tek126/hamcore-open/issues>
 
 
+## AI disclosure
+
+HamCore is developed with substantial assistance from generative AI (Anthropic's
+Claude, via Claude Code), directed, reviewed, and operated by a human maintainer.
+AI-assisted commits carry a `Co-Authored-By: Claude` trailer in the git history.
+The code is verified by automated tests and real hardware builds, but as with any
+software — and especially anything bearing on FCC Part 97 compliance — review and
+test it yourself before relying on it. This project is not legal advice.
+
 ## Acknowledgments
 
 - Forked from [MeshCore Open](https://github.com/zjs81/meshcore-open) by zjs81 (MIT) — to support the upstream author, see their repo

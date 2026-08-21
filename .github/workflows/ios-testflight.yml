@@ -1,0 +1,122 @@
+# Build a signed iOS release and upload it to TestFlight.
+#
+# The Flutter analogue of an EAS production build + submit:
+#   - macOS runner (free for public repos)
+#   - Xcode "cloud signing" manages certificates/profiles automatically from an
+#     App Store Connect API key (no manual cert handling, like EAS credentials)
+#   - build number auto-increments from the workflow run number
+#   - fastlane pilot (preinstalled on the runner) uploads to TestFlight
+#
+# Required repository secrets (Settings -> Secrets and variables -> Actions):
+#   APPLE_TEAM_ID   - 10-char Apple Developer Team ID
+#   ASC_KEY_ID      - App Store Connect API key ID
+#   ASC_ISSUER_ID   - App Store Connect issuer ID
+#   ASC_API_KEY_P8  - full contents of the AuthKey_<ASC_KEY_ID>.p8 file
+#
+# One-time setup in Apple's portals (see TESTFLIGHT_GUIDE.md):
+#   1. Register bundle ID com.hamcore.hamcoreOpen
+#   2. Create the app record in App Store Connect
+#   3. Create an App Store Connect API key with App Manager role
+
+name: iOS TestFlight
+
+on:
+  workflow_dispatch:
+    inputs:
+      submit:
+        description: "Upload the build to TestFlight"
+        type: boolean
+        default: true
+
+jobs:
+  ios-testflight:
+    runs-on: macos-15
+    timeout-minutes: 90
+    env:
+      ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+      APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Write App Store Connect API key
+        run: |
+          mkdir -p ~/private_keys
+          printf '%s' "${{ secrets.ASC_API_KEY_P8 }}" > ~/private_keys/AuthKey_${ASC_KEY_ID}.p8
+
+      - name: Generate Xcode config and install pods
+        run: |
+          flutter build ios --release --config-only --build-number=${{ github.run_number }}
+          pod install --project-directory=ios
+
+      - name: Archive (cloud-managed signing)
+        run: |
+          xcodebuild \
+            -workspace ios/Runner.xcworkspace \
+            -scheme Runner \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -archivePath build/Runner.xcarchive \
+            archive \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath ~/private_keys/AuthKey_${ASC_KEY_ID}.p8 \
+            -authenticationKeyID "$ASC_KEY_ID" \
+            -authenticationKeyIssuerID "$ASC_ISSUER_ID" \
+            DEVELOPMENT_TEAM="$APPLE_TEAM_ID" \
+            CODE_SIGN_STYLE=Automatic
+
+      - name: Export IPA
+        run: |
+          cat > build/ExportOptions.plist <<EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key><string>app-store-connect</string>
+            <key>signingStyle</key><string>automatic</string>
+            <key>teamID</key><string>${APPLE_TEAM_ID}</string>
+            <key>uploadSymbols</key><true/>
+          </dict>
+          </plist>
+          EOF
+          xcodebuild \
+            -exportArchive \
+            -archivePath build/Runner.xcarchive \
+            -exportPath build/ipa \
+            -exportOptionsPlist build/ExportOptions.plist \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath ~/private_keys/AuthKey_${ASC_KEY_ID}.p8 \
+            -authenticationKeyID "$ASC_KEY_ID" \
+            -authenticationKeyIssuerID "$ASC_ISSUER_ID"
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hamcore-open-ios-${{ github.run_number }}
+          path: build/ipa/*.ipa
+          retention-days: 30
+
+      - name: Upload to TestFlight
+        if: ${{ inputs.submit }}
+        run: |
+          cat > /tmp/asc_api_key.json <<EOF
+          {
+            "key_id": "${ASC_KEY_ID}",
+            "issuer_id": "${ASC_ISSUER_ID}",
+            "key": $(python3 -c "import json,sys;print(json.dumps(open('$HOME/private_keys/AuthKey_${ASC_KEY_ID}.p8').read()))"),
+            "in_house": false
+          }
+          EOF
+          IPA=$(ls build/ipa/*.ipa | head -1)
+          fastlane pilot upload \
+            --ipa "$IPA" \
+            --api_key_path /tmp/asc_api_key.json \
+            --skip_waiting_for_build_processing true

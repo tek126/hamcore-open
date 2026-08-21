@@ -1,12 +1,46 @@
 # TestFlight and App Store Deployment Guide
 
+## Recommended path: GitHub Actions (no Mac required)
+
+The `iOS TestFlight` workflow (`.github/workflows/ios-testflight.yml`) builds a
+signed IPA on a GitHub macOS runner and uploads it to TestFlight. Certificates
+and provisioning profiles are cloud-managed by Xcode from your App Store
+Connect API key — nothing to export or renew by hand.
+
+One-time setup:
+
+1. **Apple Developer account** ($99/yr) with the Apple Developer Program agreement accepted.
+2. **Register the bundle ID** `com.hamcore.hamcoreOpen` (Step 1 below).
+3. **Create the app record** in App Store Connect (Step 2 below).
+4. **Create an App Store Connect API key**: Users and Access -> Integrations ->
+   App Store Connect API -> "+". Role: **App Manager**. Note the Key ID and
+   Issuer ID and download the `.p8` file (downloadable only once).
+5. **Add four repository secrets** (Settings -> Secrets and variables -> Actions):
+   `APPLE_TEAM_ID`, `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_API_KEY_P8` (paste the
+   whole `.p8` file contents).
+
+Then run the workflow from the Actions tab ("iOS TestFlight" -> Run workflow).
+Build numbers auto-increment from the run number; untick "Upload to TestFlight"
+to only produce the IPA as a downloadable artifact.
+
+Gotchas (they apply to any pipeline, EAS included):
+
+- If the upload fails with a vague error, check App Store Connect for an
+  **unsigned agreement** — Apple rotates these and the CLI error is unhelpful.
+- The **first** upload for a new app can take a while to appear in TestFlight
+  while Apple processes it; later ones are faster.
+- TestFlight builds must be signed for App Store distribution; the ad-hoc/
+  development-signed IPAs from other pipelines cannot be submitted.
+
+## Manual path (requires a Mac)
+
 ## Prerequisites
 
 - [x] Apple Developer Account ($99/year) - [developer.apple.com](https://developer.apple.com)
 - [x] Xcode installed
 - [x] Apple Transporter app installed
 - [x] App icons ready (1024x1024px)
-- [x] Bundle ID configured: `com.monitormx.meshcoreopen`
+- [x] Bundle ID configured: `com.hamcore.hamcoreOpen`
 
 ## Step 1: Register Bundle Identifier
 
@@ -15,8 +49,8 @@
 3. Select **"App IDs"** → Continue
 4. Select **"App"** → Continue
 5. Fill in:
-   - **Description**: Meshcore Open
-   - **Bundle ID**: Explicit - `com.monitormx.meshcoreopen`
+   - **Description**: HamCore Open
+   - **Bundle ID**: Explicit - `com.hamcore.hamcoreOpen`
    - **Capabilities**: Leave defaults (or add as needed)
 6. Click **Continue** → **Register**
 
@@ -28,9 +62,9 @@
 4. Click the **"+"** button → **"New App"**
 5. Fill in the form:
    - **Platforms**: iOS
-   - **Name**: Meshcore Open
+   - **Name**: HamCore Open
    - **Primary Language**: English (U.S.)
-   - **Bundle ID**: Select `com.monitormx.meshcoreopen` from dropdown
+   - **Bundle ID**: Select `com.hamcore.hamcoreOpen` from dropdown
    - **SKU**: `hamcore-open-001` (or any unique identifier)
    - **User Access**: Full Access
 6. Click **"Create"**
@@ -50,7 +84,7 @@ export PATH="/opt/homebrew/lib/ruby/gems/4.0.0/bin:$PATH"
 ../flutter/bin/flutter build ipa
 ```
 
-The IPA will be created at: `build/ios/ipa/meshcore_open.ipa`
+The IPA will be created at: `build/ios/ipa/hamcore_open.ipa`
 
 ## Step 4: Upload to App Store Connect via Transporter
 
@@ -59,7 +93,7 @@ The IPA will be created at: `build/ios/ipa/meshcore_open.ipa`
    - Sign in with your Apple ID
 
 2. **Upload the IPA**
-   - Drag and drop `build/ios/ipa/meshcore_open.ipa` into Transporter
+   - Drag and drop `build/ios/ipa/hamcore_open.ipa` into Transporter
    - Click **"Deliver"**
    - Wait for upload to complete (usually 1-5 minutes)
 
@@ -86,7 +120,7 @@ The IPA will be created at: `build/ios/ipa/meshcore_open.ipa`
 
 3. Fill in **Description**:
    ```
-   Meshcore Open is a Flutter client for HamCore LoRa mesh networking devices.
+   HamCore Open is a Flutter client for HamCore LoRa mesh networking devices.
 
    Features:
    - BLE connectivity to HamCore devices
@@ -105,7 +139,7 @@ The IPA will be created at: `build/ios/ipa/meshcore_open.ipa`
 ### Version Information
 1. **What's New in This Version**:
    ```
-   Initial release of Meshcore Open
+   Initial release of HamCore Open
 
    - BLE device connectivity
    - Mesh network messaging
@@ -223,7 +257,7 @@ Distribution:
 
 ## Important Files
 
-- **iOS IPA**: `build/ios/ipa/meshcore_open.ipa`
+- **iOS IPA**: `build/ios/ipa/hamcore_open.ipa`
 - **macOS App**: `build/macos/Build/Products/Release/meshcore_open.app`
 - **Bundle ID Config**: `ios/Runner.xcodeproj/project.pbxproj`
 - **Version Info**: `pubspec.yaml`
@@ -241,4 +275,4 @@ Distribution:
 For issues with:
 - **App Store Process**: [Apple Developer Support](https://developer.apple.com/contact/)
 - **Flutter Build Issues**: [Flutter GitHub](https://github.com/flutter/flutter/issues)
-- **Meshcore Open App**: [GitHub Issues](https://github.com/tek126/hamcore-open/issues)
+- **HamCore Open App**: [GitHub Issues](https://github.com/tek126/hamcore-open/issues)

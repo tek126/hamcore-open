@@ -136,7 +136,7 @@
     }
   },
   "settings_aboutLegalese": "Проект HamCore с отворен код 2024 г.",
-  "settings_aboutDescription": "Отворен Flutter клиент за HamCore LoRa мрежови устройства.",
+  "settings_aboutDescription": "Отворен Flutter клиент за HamCore LoRa мрежови устройства. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.",
   "settings_infoName": "Име",
   "settings_infoId": "ИД",
   "settings_infoStatus": "Статус",

@@ -594,7 +594,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get settings_aboutDescription =>
-      'Клієнт Flutter з відкритим вихідним кодом для пристроїв мережі HamCore LoRa.';
+      'Клієнт Flutter з відкритим вихідним кодом для пристроїв мережі HamCore LoRa. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>

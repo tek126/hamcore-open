@@ -590,7 +590,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get settings_aboutDescription =>
-      'Otvorený zdrojový Flutter klient pre HamCore LoRa sieťové zariadenia.';
+      'Otvorený zdrojový Flutter klient pre HamCore LoRa sieťové zariadenia. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>

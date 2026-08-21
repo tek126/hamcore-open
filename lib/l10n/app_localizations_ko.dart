@@ -567,7 +567,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get settings_aboutDescription =>
-      'HamCore LoRa 메시 네트워크 장치를 위한 오픈소스 Flutter 클라이언트.';
+      'HamCore LoRa 메시 네트워크 장치를 위한 오픈소스 Flutter 클라이언트. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>

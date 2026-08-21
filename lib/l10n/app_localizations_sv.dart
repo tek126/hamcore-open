@@ -586,7 +586,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get settings_aboutDescription =>
-      'En öppen källkods Flutter-klient för HamCore LoRa meshnätverksenheter.';
+      'En öppen källkods Flutter-klient för HamCore LoRa meshnätverksenheter. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>

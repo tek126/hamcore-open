@@ -136,7 +136,7 @@
     }
   },
   "settings_aboutLegalese": "Projekt HamCore Open Source 2026",
-  "settings_aboutDescription": "Otwartoźródłowy klient Flutter dla urządzeń HamCore LoRa do sieci mesh.",
+  "settings_aboutDescription": "Otwartoźródłowy klient Flutter dla urządzeń HamCore LoRa do sieci mesh. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.",
   "settings_infoName": "Nazwa",
   "settings_infoId": "ID",
   "settings_infoStatus": "Stan",

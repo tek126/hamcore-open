@@ -590,7 +590,7 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get settings_aboutDescription =>
-      'Odprtokodni Flutter klient za naprave za LoRa omrežje HamCore.';
+      'Odprtokodni Flutter klient za naprave za LoRa omrežje HamCore. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>

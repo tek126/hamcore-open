@@ -136,7 +136,7 @@
     }
   },
   "settings_aboutLegalese": "Projet open source HamCore 2026",
-  "settings_aboutDescription": "Client Flutter open source pour les appareils de réseau maillé LoRa HamCore.",
+  "settings_aboutDescription": "Client Flutter open source pour les appareils de réseau maillé LoRa HamCore. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.",
   "settings_infoName": "Nom",
   "settings_infoId": "ID",
   "settings_infoStatus": "État",

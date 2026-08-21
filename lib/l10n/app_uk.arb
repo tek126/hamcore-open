@@ -137,7 +137,7 @@
     }
   },
   "settings_aboutLegalese": "Проєкт HamCore Open Source 2026",
-  "settings_aboutDescription": "Клієнт Flutter з відкритим вихідним кодом для пристроїв мережі HamCore LoRa.",
+  "settings_aboutDescription": "Клієнт Flutter з відкритим вихідним кодом для пристроїв мережі HamCore LoRa. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.",
   "settings_infoName": "Ім'я",
   "settings_infoId": "Ідентифікатор",
   "settings_infoStatus": "Статус",

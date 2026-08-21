@@ -601,7 +601,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get settings_aboutDescription =>
-      'Client Flutter open source pour les appareils de réseau maillé LoRa HamCore.';
+      'Client Flutter open source pour les appareils de réseau maillé LoRa HamCore. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>

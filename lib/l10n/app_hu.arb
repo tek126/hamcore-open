@@ -199,7 +199,7 @@
     }
   },
   "settings_aboutLegalese": "2026 HamCore nyílt forráskódú projekt",
-  "settings_aboutDescription": "Nyílt forráskódú Flutter kliens HamCore LoRa mesh hálózati eszközökhöz.",
+  "settings_aboutDescription": "Nyílt forráskódú Flutter kliens HamCore LoRa mesh hálózati eszközökhöz. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.",
   "settings_aboutOpenMeteoAttribution": "LOS magassági adatok: Open-Meteo (CC BY 4.0)",
   "settings_infoName": "Név",
   "settings_infoId": "ID",

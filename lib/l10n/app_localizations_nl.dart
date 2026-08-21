@@ -593,7 +593,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get settings_aboutDescription =>
-      'Een open-source Flutter client voor HamCore LoRa mesh netwerkapparaten.';
+      'Een open-source Flutter client voor HamCore LoRa mesh netwerkapparaten. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>

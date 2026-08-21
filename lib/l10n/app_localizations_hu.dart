@@ -593,7 +593,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get settings_aboutDescription =>
-      'Nyílt forráskódú Flutter kliens HamCore LoRa mesh hálózati eszközökhöz.';
+      'Nyílt forráskódú Flutter kliens HamCore LoRa mesh hálózati eszközökhöz. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>

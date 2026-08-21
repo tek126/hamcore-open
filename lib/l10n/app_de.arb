@@ -136,7 +136,7 @@
     }
   },
   "settings_aboutLegalese": "2026 HamCore Open-Source-Projekt",
-  "settings_aboutDescription": "Ein Open-Source-Flutter-Client für HamCore LoRa-Meshnetzwerkgeräte.",
+  "settings_aboutDescription": "Ein Open-Source-Flutter-Client für HamCore LoRa-Meshnetzwerkgeräte. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.",
   "settings_infoName": "Name",
   "settings_infoId": "ID",
   "settings_infoStatus": "Status",

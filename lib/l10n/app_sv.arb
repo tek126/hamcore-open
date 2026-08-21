@@ -136,7 +136,7 @@
     }
   },
   "settings_aboutLegalese": "2024 HamCore Öppen Källkodsprojekt",
-  "settings_aboutDescription": "En öppen källkods Flutter-klient för HamCore LoRa meshnätverksenheter.",
+  "settings_aboutDescription": "En öppen källkods Flutter-klient för HamCore LoRa meshnätverksenheter. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.",
   "settings_infoName": "Namn",
   "settings_infoId": "ID",
   "settings_infoStatus": "Status",

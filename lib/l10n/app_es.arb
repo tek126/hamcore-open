@@ -136,7 +136,7 @@
     }
   },
   "settings_aboutLegalese": "Proyecto HamCore Open Source 2026",
-  "settings_aboutDescription": "Un cliente Flutter de código abierto para dispositivos HamCore de malla LoRa.",
+  "settings_aboutDescription": "Un cliente Flutter de código abierto para dispositivos HamCore de malla LoRa. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.",
   "settings_infoName": "Nombre",
   "settings_infoId": "ID",
   "settings_infoStatus": "Estado",

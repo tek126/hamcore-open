@@ -136,7 +136,7 @@
     }
   },
   "settings_aboutLegalese": "HamCore Open Source Projekt 2024",
-  "settings_aboutDescription": "Otvorený zdrojový Flutter klient pre HamCore LoRa sieťové zariadenia.",
+  "settings_aboutDescription": "Otvorený zdrojový Flutter klient pre HamCore LoRa sieťové zariadenia. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.",
   "settings_infoName": "Meno",
   "settings_infoId": "Identifikátor",
   "settings_infoStatus": "Stav",

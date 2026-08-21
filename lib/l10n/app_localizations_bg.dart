@@ -601,7 +601,7 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get settings_aboutDescription =>
-      'Отворен Flutter клиент за HamCore LoRa мрежови устройства.';
+      'Отворен Flutter клиент за HamCore LoRa мрежови устройства. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>

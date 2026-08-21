@@ -599,7 +599,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get settings_aboutDescription =>
-      'Открытое клиентское приложение на Flutter для устройств HamCore с LoRa-сетями.';
+      'Открытое клиентское приложение на Flutter для устройств HamCore с LoRa-сетями. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>

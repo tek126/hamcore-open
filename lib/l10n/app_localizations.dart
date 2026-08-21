@@ -1189,7 +1189,7 @@ abstract class AppLocalizations {
   /// No description provided for @settings_aboutDescription.
   ///
   /// In en, this message translates to:
-  /// **'An open-source Flutter client for HamCore LoRa mesh networking devices.'**
+  /// **'An open-source Flutter client for HamCore LoRa mesh networking devices. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.'**
   String get settings_aboutDescription;
 
   /// No description provided for @settings_aboutOpenMeteoAttribution.

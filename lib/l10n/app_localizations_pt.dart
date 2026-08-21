@@ -597,7 +597,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get settings_aboutDescription =>
-      'Um cliente Flutter de código aberto para dispositivos de rede mesh LoRa Core da HamCore.';
+      'Um cliente Flutter de código aberto para dispositivos de rede mesh LoRa Core da HamCore. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>

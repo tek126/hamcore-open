@@ -597,7 +597,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get settings_aboutDescription =>
-      'Ein Open-Source-Flutter-Client für HamCore LoRa-Meshnetzwerkgeräte.';
+      'Ein Open-Source-Flutter-Client für HamCore LoRa-Meshnetzwerkgeräte. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>

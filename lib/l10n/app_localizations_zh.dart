@@ -559,7 +559,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get settings_aboutDescription =>
-      '一个开源的 Flutter 客户端，用于 HamCore LoRa 无线网络设备。';
+      '一个开源的 Flutter 客户端，用于 HamCore LoRa 无线网络设备。 Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>

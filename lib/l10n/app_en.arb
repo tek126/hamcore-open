@@ -239,7 +239,7 @@
     }
   },
   "settings_aboutLegalese": "2026 HamCore Open Source Project",
-  "settings_aboutDescription": "An open-source Flutter client for HamCore LoRa mesh networking devices.",
+  "settings_aboutDescription": "An open-source Flutter client for HamCore LoRa mesh networking devices. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.",
   "settings_aboutOpenMeteoAttribution": "LOS elevation data: Open-Meteo (CC BY 4.0)",
   "settings_infoName": "Name",
   "settings_infoId": "ID",

@@ -141,7 +141,7 @@
     }
   },
   "settings_aboutLegalese": "2026 HamCore 开源项目",
-  "settings_aboutDescription": "一个开源的 Flutter 客户端，用于 HamCore LoRa 无线网络设备。",
+  "settings_aboutDescription": "一个开源的 Flutter 客户端，用于 HamCore LoRa 无线网络设备。 Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.",
   "settings_infoName": "名称",
   "settings_infoId": "MAC ID",
   "settings_infoStatus": "状态",

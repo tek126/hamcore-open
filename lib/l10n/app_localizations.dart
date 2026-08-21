@@ -2293,7 +2293,7 @@ abstract class AppLocalizations {
   /// No description provided for @channels_private.
   ///
   /// In en, this message translates to:
-  /// **'Private'**
+  /// **'Keyed'**
   String get channels_private;
 
   /// No description provided for @channels_editChannel.
@@ -2551,25 +2551,25 @@ abstract class AppLocalizations {
   /// No description provided for @channels_createPrivateChannel.
   ///
   /// In en, this message translates to:
-  /// **'Create a Private Channel'**
+  /// **'Create a Keyed Channel'**
   String get channels_createPrivateChannel;
 
   /// No description provided for @channels_createPrivateChannelDesc.
   ///
   /// In en, this message translates to:
-  /// **'Secured with a secret key.'**
+  /// **'Members hold a shared key. Anyone can read the messages over the air (Part 97 — no encryption); only key holders can post into the channel.'**
   String get channels_createPrivateChannelDesc;
 
   /// No description provided for @channels_joinPrivateChannel.
   ///
   /// In en, this message translates to:
-  /// **'Join a Private Channel'**
+  /// **'Join a Keyed Channel'**
   String get channels_joinPrivateChannel;
 
   /// No description provided for @channels_joinPrivateChannelDesc.
   ///
   /// In en, this message translates to:
-  /// **'Manually enter a secret key.'**
+  /// **'Manually enter the channel key.'**
   String get channels_joinPrivateChannelDesc;
 
   /// No description provided for @channels_joinPublicChannel.

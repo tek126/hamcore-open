@@ -567,7 +567,7 @@
       }
     }
   },
-  "channels_private": "Private",
+  "channels_private": "Keyed",
   "channels_editChannel": "Edit channel",
   "channels_muteChannel": "Mute channel",
   "channels_unmuteChannel": "Unmute channel",
@@ -664,10 +664,10 @@
   "channels_sortAZ": "A-Z",
   "channels_sortLatestMessages": "Latest messages",
   "channels_sortUnread": "Unread",
-  "channels_createPrivateChannel": "Create a Private Channel",
-  "channels_createPrivateChannelDesc": "Secured with a secret key.",
-  "channels_joinPrivateChannel": "Join a Private Channel",
-  "channels_joinPrivateChannelDesc": "Manually enter a secret key.",
+  "channels_createPrivateChannel": "Create a Keyed Channel",
+  "channels_createPrivateChannelDesc": "Members hold a shared key. Anyone can read the messages over the air (Part 97 — no encryption); only key holders can post into the channel.",
+  "channels_joinPrivateChannel": "Join a Keyed Channel",
+  "channels_joinPrivateChannelDesc": "Manually enter the channel key.",
   "channels_joinPublicChannel": "Join the Public Channel",
   "channels_joinPublicChannelDesc": "Anyone can join this channel.",
   "channels_joinHashtagChannel": "Join a Hashtag Channel",

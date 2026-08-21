@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hamcore_open/theme/mesh_theme.dart';
 import 'package:provider/provider.dart';
 
 import '../connector/meshcore_connector.dart';
@@ -49,7 +50,7 @@ class _SyncProgressState {
     if (connector.isSyncingChannels) {
       return _SyncProgressState(
         value: connector.channelSyncProgress / 100,
-        color: Colors.blue,
+        color: MeshPalette.accent,
       );
     }
     if (connector.isShowingQueuedMessageSyncProgress) {

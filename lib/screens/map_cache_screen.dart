@@ -414,8 +414,8 @@ class _MapCacheScreenState extends State<MapCacheScreen> {
                           Polygon(
                             points: _boundsToPolygon(selectedBounds),
                             borderStrokeWidth: 2,
-                            color: Colors.blue.withValues(alpha: 0.2),
-                            borderColor: Colors.blue,
+                            color: MeshPalette.accent.withValues(alpha: 0.2),
+                            borderColor: MeshPalette.accent,
                           ),
                         ],
                       ),
@@ -570,7 +570,7 @@ class _MapCacheScreenState extends State<MapCacheScreen> {
                       const SizedBox(height: 8),
                       LinearProgressIndicator(
                         value: progressValue,
-                        color: MeshPalette.blue,
+                        color: MeshPalette.accent,
                         backgroundColor: scheme.surfaceContainerHighest,
                       ),
                       const SizedBox(height: 4),

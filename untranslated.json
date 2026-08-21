@@ -1,1 +1,103 @@
-{}
+{
+  "bg": [
+    "settings_nodeNameCallsignHelper",
+    "repeater_nameCallsignInvalid",
+    "repeater_frequencyOutOfBand"
+  ],
+
+  "de": [
+    "settings_nodeNameCallsignHelper",
+    "repeater_nameCallsignInvalid",
+    "repeater_frequencyOutOfBand"
+  ],
+
+  "es": [
+    "settings_nodeNameCallsignHelper",
+    "repeater_nameCallsignInvalid",
+    "repeater_frequencyOutOfBand"
+  ],
+
+  "fr": [
+    "settings_nodeNameCallsignHelper",
+    "repeater_nameCallsignInvalid",
+    "repeater_frequencyOutOfBand"
+  ],
+
+  "hu": [
+    "settings_nodeNameCallsignHelper",
+    "repeater_nameCallsignInvalid",
+    "repeater_frequencyOutOfBand"
+  ],
+
+  "it": [
+    "settings_nodeNameCallsignHelper",
+    "repeater_nameCallsignInvalid",
+    "repeater_frequencyOutOfBand"
+  ],
+
+  "ja": [
+    "settings_nodeNameCallsignHelper",
+    "repeater_nameCallsignInvalid",
+    "repeater_frequencyOutOfBand"
+  ],
+
+  "ko": [
+    "settings_nodeNameCallsignHelper",
+    "repeater_nameCallsignInvalid",
+    "repeater_frequencyOutOfBand"
+  ],
+
+  "nl": [
+    "settings_nodeNameCallsignHelper",
+    "repeater_nameCallsignInvalid",
+    "repeater_frequencyOutOfBand"
+  ],
+
+  "pl": [
+    "settings_nodeNameCallsignHelper",
+    "repeater_nameCallsignInvalid",
+    "repeater_frequencyOutOfBand"
+  ],
+
+  "pt": [
+    "settings_nodeNameCallsignHelper",
+    "repeater_nameCallsignInvalid",
+    "repeater_frequencyOutOfBand"
+  ],
+
+  "ru": [
+    "settings_nodeNameCallsignHelper",
+    "repeater_nameCallsignInvalid",
+    "repeater_frequencyOutOfBand"
+  ],
+
+  "sk": [
+    "settings_nodeNameCallsignHelper",
+    "repeater_nameCallsignInvalid",
+    "repeater_frequencyOutOfBand"
+  ],
+
+  "sl": [
+    "settings_nodeNameCallsignHelper",
+    "repeater_nameCallsignInvalid",
+    "repeater_frequencyOutOfBand"
+  ],
+
+  "sv": [
+    "settings_nodeNameCallsignHelper",
+    "repeater_nameCallsignInvalid",
+    "repeater_frequencyOutOfBand"
+  ],
+
+  "uk": [
+    "settings_nodeNameCallsignHelper",
+    "repeater_nameCallsignInvalid",
+    "repeater_frequencyOutOfBand"
+  ],
+
+  "zh": [
+    "settings_nodeNameCallsignHelper",
+    "repeater_nameCallsignInvalid",
+    "repeater_frequencyOutOfBand"
+  ]
+}

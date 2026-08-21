@@ -747,9 +747,7 @@ class _RepeaterSettingsScreenState extends State<RepeaterSettingsScreen> {
         if (!isValidCallsignName(_nameController.text.trim())) {
           showDismissibleSnackBar(
             context,
-            content: const Text(
-              'Repeater name must start with a callsign (e.g. W1AW-2)',
-            ),
+            content: Text(context.l10n.repeater_nameCallsignInvalid),
           );
           return;
         }
@@ -785,9 +783,7 @@ class _RepeaterSettingsScreenState extends State<RepeaterSettingsScreen> {
         if (freqMHz != null && !isHamFrequencyMHz(freqMHz)) {
           showDismissibleSnackBar(
             context,
-            content: const Text(
-              'Frequency must be in the 420-450 or 902-928 MHz ham bands',
-            ),
+            content: Text(context.l10n.repeater_frequencyOutOfBand),
           );
           return;
         }

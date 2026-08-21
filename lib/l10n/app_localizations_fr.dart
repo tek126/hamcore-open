@@ -329,9 +329,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get device_quickSwitch => 'Basculement rapide';
 
   @override
-  String get device_meshcore => 'HamCore';
-
-  @override
   String get settings_title => 'Paramètres';
 
   @override
@@ -1233,7 +1230,7 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get channels_private => 'Privé';
+  String get channels_private => 'Keyed';
 
   @override
   String get channels_editChannel => 'Modifier le canal';
@@ -1383,18 +1380,18 @@ class AppLocalizationsFr extends AppLocalizations {
   String get channels_sortUnread => 'Non lus';
 
   @override
-  String get channels_createPrivateChannel => 'Créer un Canal Privé';
+  String get channels_createPrivateChannel => 'Create a Keyed Channel';
 
   @override
   String get channels_createPrivateChannelDesc =>
-      'Sécurisé avec une clé secrète.';
+      'Members hold a shared key. Anyone can read the messages over the air (Part 97 — no encryption); only key holders can post into the channel.';
 
   @override
-  String get channels_joinPrivateChannel => 'Rejoindre un Canal Privé';
+  String get channels_joinPrivateChannel => 'Join a Keyed Channel';
 
   @override
   String get channels_joinPrivateChannelDesc =>
-      'Entrer manuellement une clé secrète.';
+      'Manually enter the channel key.';
 
   @override
   String get channels_joinPublicChannel => 'Rejoindre le canal public';
@@ -1927,9 +1924,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get map_pinDm => 'Épingle (DM)';
-
-  @override
-  String get map_pinPrivate => 'Épingle (privé)';
 
   @override
   String get map_pinPublic => 'Épingle (public)';
@@ -2594,10 +2588,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String repeater_floodAdvertIntervalHours(int hours) {
     return '$hours heures';
   }
-
-  @override
-  String get repeater_encryptedAdvertInterval =>
-      'Intervalle d\'annonces cryptées';
 
   @override
   String get repeater_dangerZone => 'Zone dangereuse';
@@ -5074,4 +5064,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String imageSend_minutesSecondsValue(String minutes, String seconds) {
     return '$minutes minutes $seconds secondes';
   }
+
+  @override
+  String get settings_nodeNameCallsignHelper =>
+      'Must start with your callsign (e.g. W1AW or W1AW-2)';
+
+  @override
+  String get repeater_nameCallsignInvalid =>
+      'Repeater name must start with a callsign (e.g. W1AW-2)';
+
+  @override
+  String get repeater_frequencyOutOfBand =>
+      'Frequency must be in the 420-450 or 902-928 MHz ham bands';
 }

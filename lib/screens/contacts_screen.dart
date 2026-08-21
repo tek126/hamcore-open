@@ -1423,7 +1423,7 @@ class _ContactsScreenState extends State<ContactsScreen>
                 },
               ),
               ListTile(
-                leading: Icon(Icons.meeting_room, color: MeshPalette.blue),
+                leading: Icon(Icons.meeting_room, color: MeshPalette.accent),
                 title: Text(context.l10n.contacts_roomLogin),
                 onTap: () {
                   Navigator.pop(sheetContext);
@@ -1595,7 +1595,7 @@ class _ContactTile extends StatelessWidget {
         return const Color(0xFF4ACCC4); // teal
       default:
         return MeshPalette
-            .blue; // chat — AvatarCircle handles deterministic hue
+            .accent; // chat — AvatarCircle handles deterministic hue
     }
   }
 
@@ -1746,7 +1746,7 @@ class _ContactTile extends StatelessWidget {
                     style: MeshTheme.mono(
                       fontSize: 11,
                       color: unreadCount > 0
-                          ? MeshPalette.blue
+                          ? MeshPalette.accent
                           : scheme.onSurfaceVariant,
                     ),
                   ),

@@ -13,7 +13,7 @@ import '../theme/mesh_theme.dart';
 
 enum PathViewMode { single, combined }
 
-const Color kPrimaryPathColor = Colors.blueAccent;
+const Color kPrimaryPathColor = MeshPalette.accent;
 const List<Color> kAlternatePathColors = [
   Color(0xFF8B5CF6), // purple
   MeshPalette.signal, // green
@@ -397,7 +397,7 @@ class PathAnimationControls extends StatelessWidget {
                 tooltip: animationEnabled
                     ? l10n.pathMap_animationOff
                     : l10n.pathMap_animationOn,
-                color: animationEnabled ? MeshPalette.blue : MeshPalette.ink4,
+                color: animationEnabled ? MeshPalette.accent : MeshPalette.ink4,
                 onPressed: onToggleAnimation,
               ),
               controlButton(
@@ -429,7 +429,7 @@ class PathAnimationControls extends StatelessWidget {
                 tooltip: followEnabled
                     ? l10n.pathMap_unfollowPacket
                     : l10n.pathMap_followPacket,
-                color: followEnabled ? MeshPalette.blue : null,
+                color: followEnabled ? MeshPalette.accent : null,
                 onPressed: enabled ? onToggleFollow : null,
               ),
               TextButton(

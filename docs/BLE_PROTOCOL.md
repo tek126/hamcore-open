@@ -22,6 +22,7 @@ The MeshCore BLE protocol implements a binary frame-based communication system u
 ### Connection Flow
 
 1. **Scan** for devices with known name prefixes (defined in `MeshCoreUuids.deviceNamePrefixes`):
+    - `HamCore-`
     - `MeshCore-`
     - `Whisper-`
     - `WisCore-`
@@ -189,8 +190,8 @@ Registers the application with the device.
 
 **Example**:
 ```dart
-buildAppStartFrame(appName: 'MeshCoreOpen', appVersion: 1)
-// [0x01][0x01][0x00 x6]["MeshCoreOpen"][0x00]
+buildAppStartFrame(appName: 'HamCoreOpen', appVersion: 1)
+// [0x01][0x01][0x00 x6]["HamCoreOpen"][0x00]
 ```
 
 ### CMD_SEND_TXT_MSG (0x02)
@@ -1289,7 +1290,7 @@ Reactions are parsed, processed to update target message's reaction counts, but 
 
 ## References
 
-- **Firmware Repository**: https://github.com/nonik0/meshcore
+- **Firmware Repository**: https://github.com/tek126/hamcore
 - **LoRa Airtime Calculator**: Based on Semtech AN1200.22
 - **SMAZ Compression**: https://github.com/antirez/smaz
 - **Ed25519**: https://ed25519.cr.yp.to/

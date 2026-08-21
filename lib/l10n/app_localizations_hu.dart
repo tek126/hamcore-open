@@ -325,9 +325,6 @@ class AppLocalizationsHu extends AppLocalizations {
   String get device_quickSwitch => 'Gyors váltás';
 
   @override
-  String get device_meshcore => 'HamCore';
-
-  @override
   String get settings_title => 'Beállítások elemre';
 
   @override
@@ -1224,7 +1221,7 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get channels_private => 'Magán';
+  String get channels_private => 'Keyed';
 
   @override
   String get channels_editChannel => 'Csatorna szerkesztése';
@@ -1372,18 +1369,18 @@ class AppLocalizationsHu extends AppLocalizations {
   String get channels_sortUnread => 'Nem olvasott';
 
   @override
-  String get channels_createPrivateChannel =>
-      'Hozzon létre egy privát csatornát';
+  String get channels_createPrivateChannel => 'Create a Keyed Channel';
 
   @override
-  String get channels_createPrivateChannelDesc => 'Titkos kulccsal biztosítva.';
+  String get channels_createPrivateChannelDesc =>
+      'Members hold a shared key. Anyone can read the messages over the air (Part 97 — no encryption); only key holders can post into the channel.';
 
   @override
-  String get channels_joinPrivateChannel => 'Csatlakozz egy privát csatornához';
+  String get channels_joinPrivateChannel => 'Join a Keyed Channel';
 
   @override
   String get channels_joinPrivateChannelDesc =>
-      'Adjon meg kézzel egy titkos kulcsot.';
+      'Manually enter the channel key.';
 
   @override
   String get channels_joinPublicChannel =>
@@ -1917,9 +1914,6 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get map_pinDm => 'Pin (DM)';
-
-  @override
-  String get map_pinPrivate => 'Pin (privát)';
 
   @override
   String get map_pinPublic => 'Pin (nyilvános)';
@@ -2581,9 +2575,6 @@ class AppLocalizationsHu extends AppLocalizations {
   String repeater_floodAdvertIntervalHours(int hours) {
     return '$hours óra';
   }
-
-  @override
-  String get repeater_encryptedAdvertInterval => 'Titkosított hirdetési időköz';
 
   @override
   String get repeater_dangerZone => 'Veszélyzóna';
@@ -5040,4 +5031,16 @@ class AppLocalizationsHu extends AppLocalizations {
   String imageSend_minutesSecondsValue(String minutes, String seconds) {
     return '$minutes per $seconds sekünd\n\n(Note: The original text appears to be a placeholder format rather than a complete sentence. The translation reflects the literal structure while preserving the placeholders as requested.)';
   }
+
+  @override
+  String get settings_nodeNameCallsignHelper =>
+      'Must start with your callsign (e.g. W1AW or W1AW-2)';
+
+  @override
+  String get repeater_nameCallsignInvalid =>
+      'Repeater name must start with a callsign (e.g. W1AW-2)';
+
+  @override
+  String get repeater_frequencyOutOfBand =>
+      'Frequency must be in the 420-450 or 902-928 MHz ham bands';
 }

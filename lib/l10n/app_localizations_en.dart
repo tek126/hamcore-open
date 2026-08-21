@@ -323,9 +323,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get device_quickSwitch => 'Quick switch';
 
   @override
-  String get device_meshcore => 'HamCore';
-
-  @override
   String get settings_title => 'Settings';
 
   @override
@@ -348,7 +345,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settings_nodeNameNotSet => 'Not set';
 
   @override
-  String get settings_nodeNameHint => 'Enter node name';
+  String get settings_nodeNameHint => 'Your callsign, e.g. W1AW or W1AW-2';
 
   @override
   String get settings_nodeNameUpdated => 'Name updated';
@@ -450,11 +447,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settings_privacyModeSubtitle =>
-      'Hide name/location in advertisements';
+      'Hide name/location in advertisements. Your callsign still identifies this station in every frame (Part 97).';
 
   @override
   String get settings_privacyModeToggle =>
-      'Toggle privacy mode to hide your name and location in advertisements.';
+      'Toggle privacy mode to hide your name and location in advertisements. Your callsign still identifies this station in every frame (Part 97).';
 
   @override
   String get settings_privacyModeEnabled => 'Privacy mode enabled';
@@ -584,7 +581,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settings_aboutDescription =>
-      'An open-source Flutter client for HamCore LoRa mesh networking devices. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.';
+      'An open-source Flutter client for HamCore LoRa mesh networking devices. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README. Transmitting requires a US amateur radio license.';
 
   @override
   String get settings_aboutOpenMeteoAttribution =>
@@ -1250,19 +1247,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get channels_usePublicChannel => 'Use Public Channel';
 
   @override
-  String get channels_standardPublicPsk => 'Standard public PSK';
+  String get channels_standardPublicPsk => 'Standard public channel key';
 
   @override
-  String get channels_pskHex => 'PSK (Hex)';
+  String get channels_pskHex => 'Channel key (Hex)';
 
   @override
-  String get channels_generateRandomPsk => 'Generate random PSK';
+  String get channels_generateRandomPsk => 'Generate random channel key';
 
   @override
   String get channels_enterChannelName => 'Please enter a channel name';
 
   @override
-  String get channels_pskMustBe32Hex => 'PSK must be 32 hex characters';
+  String get channels_pskMustBe32Hex => 'Channel key must be 32 hex characters';
 
   @override
   String channels_channelAdded(String name) {
@@ -1895,9 +1892,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get map_pinDm => 'Pin (DM)';
 
   @override
-  String get map_pinPrivate => 'Pin (Private)';
-
-  @override
   String get map_pinPublic => 'Pin (Public)';
 
   @override
@@ -1963,7 +1957,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String map_publicLocationShareConfirm(String channelLabel) {
-    return 'You are about to share a location in $channelLabel. This channel is public and anyone with the PSK can see it.';
+    return 'You are about to share a location in $channelLabel. Location pins are sent as channel messages and are readable by anyone over the air.';
   }
 
   @override
@@ -2232,7 +2226,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get login_savePasswordSubtitle =>
-      'Password will be stored securely on this device';
+      'Password will be stored on this device';
 
   @override
   String get login_repeaterDescription =>
@@ -2525,7 +2519,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get repeater_privacyModeSubtitle =>
-      'Hide name/location in advertisements';
+      'Hide name/location in advertisements. Your callsign still identifies this station in every frame (Part 97).';
 
   @override
   String get repeater_advertisementSettings => 'Advertisement Settings';
@@ -2545,10 +2539,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String repeater_floodAdvertIntervalHours(int hours) {
     return '$hours hours';
   }
-
-  @override
-  String get repeater_encryptedAdvertInterval =>
-      'Encrypted Advertisement Interval';
 
   @override
   String get repeater_dangerZone => 'Danger Zone';
@@ -3839,7 +3829,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get community_regenerateSecret => 'Regenerate Secret';
+  String get community_regenerateSecret => 'Regenerate Community Key';
 
   @override
   String community_regenerateSecretConfirm(String name) {
@@ -3851,11 +3841,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String community_secretRegenerated(String name) {
-    return 'Secret regenerated for \"$name\"';
+    return 'Community key regenerated for \"$name\"';
   }
 
   @override
-  String get community_updateSecret => 'Update Secret';
+  String get community_updateSecret => 'Update Community Key';
 
   @override
   String community_secretUpdated(String name) {
@@ -3864,7 +3854,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String community_scanToUpdateSecret(String name) {
-    return 'Scan the new QR code to update the secret for \"$name\"';
+    return 'Scan the new QR code to update the community key for \"$name\"';
   }
 
   @override
@@ -3887,7 +3877,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get community_communityHashtag => 'Community Hashtag';
 
   @override
-  String get community_communityHashtagDesc => 'Private to community members';
+  String get community_communityHashtagDesc =>
+      'Scoped to community members — readable by anyone over the air';
 
   @override
   String community_forCommunity(String name) {
@@ -4970,4 +4961,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String imageSend_minutesSecondsValue(String minutes, String seconds) {
     return '$minutes m $seconds s';
   }
+
+  @override
+  String get settings_nodeNameCallsignHelper =>
+      'Must start with your callsign (e.g. W1AW or W1AW-2)';
+
+  @override
+  String get repeater_nameCallsignInvalid =>
+      'Repeater name must start with a callsign (e.g. W1AW-2)';
+
+  @override
+  String get repeater_frequencyOutOfBand =>
+      'Frequency must be in the 420-450 or 902-928 MHz ham bands';
 }

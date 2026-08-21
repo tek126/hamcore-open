@@ -243,7 +243,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             ? l10n.common_connected
                             : l10n.common_disconnected,
                         color: connector.isConnected
-                            ? MeshPalette.blue
+                            ? MeshPalette.accent
                             : scheme.onSurfaceVariant,
                         pulse: connector.isConnected,
                       ),
@@ -751,7 +751,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           controller: controller,
           decoration: InputDecoration(
             hintText: l10n.settings_nodeNameHint,
-            helperText: 'Must start with your callsign (e.g. W1AW or W1AW-2)',
+            helperText: l10n.settings_nodeNameCallsignHelper,
             helperMaxLines: 2,
             border: const OutlineInputBorder(),
           ),

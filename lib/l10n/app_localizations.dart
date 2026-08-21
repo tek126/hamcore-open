@@ -706,12 +706,6 @@ abstract class AppLocalizations {
   /// **'Quick switch'**
   String get device_quickSwitch;
 
-  /// No description provided for @device_meshcore.
-  ///
-  /// In en, this message translates to:
-  /// **'HamCore'**
-  String get device_meshcore;
-
   /// No description provided for @settings_title.
   ///
   /// In en, this message translates to:
@@ -757,7 +751,7 @@ abstract class AppLocalizations {
   /// No description provided for @settings_nodeNameHint.
   ///
   /// In en, this message translates to:
-  /// **'Enter node name'**
+  /// **'Your callsign, e.g. W1AW or W1AW-2'**
   String get settings_nodeNameHint;
 
   /// No description provided for @settings_nodeNameUpdated.
@@ -943,13 +937,13 @@ abstract class AppLocalizations {
   /// No description provided for @settings_privacyModeSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Hide name/location in advertisements'**
+  /// **'Hide name/location in advertisements. Your callsign still identifies this station in every frame (Part 97).'**
   String get settings_privacyModeSubtitle;
 
   /// No description provided for @settings_privacyModeToggle.
   ///
   /// In en, this message translates to:
-  /// **'Toggle privacy mode to hide your name and location in advertisements.'**
+  /// **'Toggle privacy mode to hide your name and location in advertisements. Your callsign still identifies this station in every frame (Part 97).'**
   String get settings_privacyModeToggle;
 
   /// No description provided for @settings_privacyModeEnabled.
@@ -1189,7 +1183,7 @@ abstract class AppLocalizations {
   /// No description provided for @settings_aboutDescription.
   ///
   /// In en, this message translates to:
-  /// **'An open-source Flutter client for HamCore LoRa mesh networking devices. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.'**
+  /// **'An open-source Flutter client for HamCore LoRa mesh networking devices. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README. Transmitting requires a US amateur radio license.'**
   String get settings_aboutDescription;
 
   /// No description provided for @settings_aboutOpenMeteoAttribution.
@@ -2365,19 +2359,19 @@ abstract class AppLocalizations {
   /// No description provided for @channels_standardPublicPsk.
   ///
   /// In en, this message translates to:
-  /// **'Standard public PSK'**
+  /// **'Standard public channel key'**
   String get channels_standardPublicPsk;
 
   /// No description provided for @channels_pskHex.
   ///
   /// In en, this message translates to:
-  /// **'PSK (Hex)'**
+  /// **'Channel key (Hex)'**
   String get channels_pskHex;
 
   /// No description provided for @channels_generateRandomPsk.
   ///
   /// In en, this message translates to:
-  /// **'Generate random PSK'**
+  /// **'Generate random channel key'**
   String get channels_generateRandomPsk;
 
   /// No description provided for @channels_enterChannelName.
@@ -2389,7 +2383,7 @@ abstract class AppLocalizations {
   /// No description provided for @channels_pskMustBe32Hex.
   ///
   /// In en, this message translates to:
-  /// **'PSK must be 32 hex characters'**
+  /// **'Channel key must be 32 hex characters'**
   String get channels_pskMustBe32Hex;
 
   /// No description provided for @channels_channelAdded.
@@ -3496,12 +3490,6 @@ abstract class AppLocalizations {
   /// **'Pin (DM)'**
   String get map_pinDm;
 
-  /// No description provided for @map_pinPrivate.
-  ///
-  /// In en, this message translates to:
-  /// **'Pin (Private)'**
-  String get map_pinPrivate;
-
   /// No description provided for @map_pinPublic.
   ///
   /// In en, this message translates to:
@@ -3631,7 +3619,7 @@ abstract class AppLocalizations {
   /// No description provided for @map_publicLocationShareConfirm.
   ///
   /// In en, this message translates to:
-  /// **'You are about to share a location in {channelLabel}. This channel is public and anyone with the PSK can see it.'**
+  /// **'You are about to share a location in {channelLabel}. Location pins are sent as channel messages and are readable by anyone over the air.'**
   String map_publicLocationShareConfirm(String channelLabel);
 
   /// No description provided for @map_connectToShareMarkers.
@@ -4092,7 +4080,7 @@ abstract class AppLocalizations {
   /// No description provided for @login_savePasswordSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Password will be stored securely on this device'**
+  /// **'Password will be stored on this device'**
   String get login_savePasswordSubtitle;
 
   /// No description provided for @login_repeaterDescription.
@@ -4625,7 +4613,7 @@ abstract class AppLocalizations {
   /// No description provided for @repeater_privacyModeSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Hide name/location in advertisements'**
+  /// **'Hide name/location in advertisements. Your callsign still identifies this station in every frame (Part 97).'**
   String get repeater_privacyModeSubtitle;
 
   /// No description provided for @repeater_advertisementSettings.
@@ -4657,12 +4645,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{hours} hours'**
   String repeater_floodAdvertIntervalHours(int hours);
-
-  /// No description provided for @repeater_encryptedAdvertInterval.
-  ///
-  /// In en, this message translates to:
-  /// **'Encrypted Advertisement Interval'**
-  String get repeater_encryptedAdvertInterval;
 
   /// No description provided for @repeater_dangerZone.
   ///
@@ -6773,7 +6755,7 @@ abstract class AppLocalizations {
   /// No description provided for @community_regenerateSecret.
   ///
   /// In en, this message translates to:
-  /// **'Regenerate Secret'**
+  /// **'Regenerate Community Key'**
   String get community_regenerateSecret;
 
   /// No description provided for @community_regenerateSecretConfirm.
@@ -6791,13 +6773,13 @@ abstract class AppLocalizations {
   /// No description provided for @community_secretRegenerated.
   ///
   /// In en, this message translates to:
-  /// **'Secret regenerated for \"{name}\"'**
+  /// **'Community key regenerated for \"{name}\"'**
   String community_secretRegenerated(String name);
 
   /// No description provided for @community_updateSecret.
   ///
   /// In en, this message translates to:
-  /// **'Update Secret'**
+  /// **'Update Community Key'**
   String get community_updateSecret;
 
   /// No description provided for @community_secretUpdated.
@@ -6809,7 +6791,7 @@ abstract class AppLocalizations {
   /// No description provided for @community_scanToUpdateSecret.
   ///
   /// In en, this message translates to:
-  /// **'Scan the new QR code to update the secret for \"{name}\"'**
+  /// **'Scan the new QR code to update the community key for \"{name}\"'**
   String community_scanToUpdateSecret(String name);
 
   /// No description provided for @community_addHashtagChannel.
@@ -6851,7 +6833,7 @@ abstract class AppLocalizations {
   /// No description provided for @community_communityHashtagDesc.
   ///
   /// In en, this message translates to:
-  /// **'Private to community members'**
+  /// **'Scoped to community members — readable by anyone over the air'**
   String get community_communityHashtagDesc;
 
   /// No description provided for @community_forCommunity.
@@ -8601,6 +8583,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{minutes} m {seconds} s'**
   String imageSend_minutesSecondsValue(String minutes, String seconds);
+
+  /// No description provided for @settings_nodeNameCallsignHelper.
+  ///
+  /// In en, this message translates to:
+  /// **'Must start with your callsign (e.g. W1AW or W1AW-2)'**
+  String get settings_nodeNameCallsignHelper;
+
+  /// No description provided for @repeater_nameCallsignInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeater name must start with a callsign (e.g. W1AW-2)'**
+  String get repeater_nameCallsignInvalid;
+
+  /// No description provided for @repeater_frequencyOutOfBand.
+  ///
+  /// In en, this message translates to:
+  /// **'Frequency must be in the 420-450 or 902-928 MHz ham bands'**
+  String get repeater_frequencyOutOfBand;
 }
 
 class _AppLocalizationsDelegate

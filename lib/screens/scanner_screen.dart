@@ -483,7 +483,7 @@ class _ConnectionStatusHeader extends StatelessWidget {
     final (String label, Color color, bool pulse) = switch (connector.state) {
       MeshCoreConnectionState.scanning => (
         l10n.scanner_scanning,
-        MeshPalette.blue,
+        MeshPalette.accent,
         true,
       ),
       MeshCoreConnectionState.connecting => (

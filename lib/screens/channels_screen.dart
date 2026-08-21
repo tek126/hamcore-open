@@ -402,10 +402,10 @@ class _ChannelsScreenState extends State<ChannelsScreen>
         iconColor = MeshPalette.signal;
       case ChannelType.hashtag:
         icon = Icons.tag;
-        iconColor = MeshPalette.blue;
+        iconColor = MeshPalette.accent;
       case ChannelType.private:
-        icon = Icons.lock;
-        iconColor = MeshPalette.blue;
+        icon = Icons.key;
+        iconColor = MeshPalette.accent;
     }
 
     // Last message preview
@@ -841,8 +841,10 @@ class _ChannelsScreenState extends State<ChannelsScreen>
             return MeshCard(
               margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-              borderColor: isSelected && enabled ? MeshPalette.blueLine : null,
-              color: isSelected && enabled ? MeshPalette.blueBg : null,
+              borderColor: isSelected && enabled
+                  ? MeshPalette.accentLine
+                  : null,
+              color: isSelected && enabled ? MeshPalette.accentBg : null,
               onTap: enabled
                   ? () {
                       setSheetState(() {
@@ -860,7 +862,7 @@ class _ChannelsScreenState extends State<ChannelsScreen>
                     size: 38,
                     color: enabled
                         ? (isSelected
-                              ? MeshPalette.blue
+                              ? MeshPalette.accent
                               : cardScheme.onSurfaceVariant)
                         : cardScheme.outline,
                     icon: icon,
@@ -898,7 +900,7 @@ class _ChannelsScreenState extends State<ChannelsScreen>
                     Icon(
                       Icons.chevron_right,
                       color: isSelected
-                          ? MeshPalette.blue
+                          ? MeshPalette.accent
                           : cardScheme.onSurfaceVariant,
                       size: 20,
                     ),
@@ -1466,7 +1468,7 @@ class _ChannelsScreenState extends State<ChannelsScreen>
                         buildExpandedContent(_channelMessageStore)!,
                       buildOptionCard(
                         optionIndex: 1,
-                        icon: Icons.lock,
+                        icon: Icons.key,
                         title: sheetContext.l10n.channels_joinPrivateChannel,
                         subtitle:
                             sheetContext.l10n.channels_joinPrivateChannelDesc,

@@ -43,7 +43,7 @@ lib/
 ├── storage/         # SharedPreferences-backed stores, scoped per device key
 ├── helpers/         # Pure utilities (Smaz compression, GIF parsing, scroll helpers, path hop resolution)
 ├── utils/           # Platform / IO / UX utilities (logger, GPX export, dialogs)
-├── theme/           # MeshPalette (defined, not yet wired in main.dart)
+├── theme/           # MeshPalette + MeshTheme (wired in main.dart via MeshTheme.light()/dark())
 ├── l10n/            # ARB localization for 18 locales
 ├── icons/           # Custom icon widgets
 ├── widgets/         # Reusable widgets (AppBar, BatteryUi, QR, jump-to-bottom, …)
@@ -146,7 +146,7 @@ GGUF translation models are stored as files (not SharedPreferences) via `transla
 - Material 3 design (`useMaterial3: true`)
 - System-based dark/light mode (`ThemeMode.system`)
 - Blue color scheme seed
-- `lib/theme/mesh_theme.dart` defines a warm-dark `MeshPalette` (phosphor-green accents) but is **not currently wired** in `main.dart` — available for a future redesign
+- `lib/theme/mesh_theme.dart` defines `MeshPalette` and `MeshTheme`, **wired** in `main.dart` (`theme: MeshTheme.light()`, `darkTheme: MeshTheme.dark()`) — the single place to change app-wide colors
 
 ### Localization
 

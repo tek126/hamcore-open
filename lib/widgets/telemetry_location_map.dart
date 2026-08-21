@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:hamcore_open/theme/mesh_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
@@ -266,7 +267,7 @@ class _TelemetryLocationMapState extends State<TelemetryLocationMap> {
   Color _getNodeColor(int type) {
     switch (type) {
       case advTypeChat:
-        return Colors.blue;
+        return MeshPalette.accent;
       case advTypeRepeater:
         return Colors.green;
       case advTypeRoom:

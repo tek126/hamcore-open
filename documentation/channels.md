@@ -130,8 +130,10 @@ Outsiders who don't know the secret cannot discover or join community channels.
 
 Communities are shared via QR codes containing a JSON payload:
 ```json
-{"v": 1, "type": "meshcore_community", "name": "...", "k": "<base64url-secret>"}
+{"v": 1, "type": "hamcore_community", "name": "...", "k": "<base64url-secret>"}
 ```
+
+(Legacy `"type": "meshcore_community"` QR codes are still accepted on import.)
 
 ### Managing Communities
 

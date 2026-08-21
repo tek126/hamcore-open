@@ -244,7 +244,7 @@ class AvatarCircle extends StatelessWidget {
   });
 
   static const _hues = [
-    MeshPalette.blue,
+    MeshPalette.accent,
     MeshPalette.magenta,
     MeshPalette.signal,
     MeshPalette.warn,

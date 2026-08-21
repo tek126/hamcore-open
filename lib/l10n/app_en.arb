@@ -145,7 +145,6 @@
   "scanner_enableBluetooth": "Enable Bluetooth",
   "scanner_bluetoothWebUnsupported": "Bluetooth isn't available in the browser. Connect over USB instead.",
   "device_quickSwitch": "Quick switch",
-  "device_meshcore": "HamCore",
   "settings_title": "Settings",
   "settings_deviceInfo": "Device Info",
   "settings_appSettings": "App Settings",
@@ -153,7 +152,7 @@
   "settings_nodeSettings": "Node Settings",
   "settings_nodeName": "Node Name",
   "settings_nodeNameNotSet": "Not set",
-  "settings_nodeNameHint": "Enter node name",
+  "settings_nodeNameHint": "Your callsign, e.g. W1AW or W1AW-2",
   "settings_nodeNameUpdated": "Name updated",
   "settings_radioSettings": "Radio Settings",
   "settings_radioSettingsSubtitle": "Frequency, power, spreading factor",
@@ -191,8 +190,8 @@
   "settings_contactSettings": "Contact Settings",
   "settings_contactSettingsSubtitle": "Settings for how contacts are added.",
   "settings_privacyMode": "Privacy Mode",
-  "settings_privacyModeSubtitle": "Hide name/location in advertisements",
-  "settings_privacyModeToggle": "Toggle privacy mode to hide your name and location in advertisements.",
+  "settings_privacyModeSubtitle": "Hide name/location in advertisements. Your callsign still identifies this station in every frame (Part 97).",
+  "settings_privacyModeToggle": "Toggle privacy mode to hide your name and location in advertisements. Your callsign still identifies this station in every frame (Part 97).",
   "settings_privacyModeEnabled": "Privacy mode enabled",
   "settings_privacyModeDisabled": "Privacy mode disabled",
   "settings_privacy": "Privacy Settings",
@@ -239,7 +238,7 @@
     }
   },
   "settings_aboutLegalese": "2026 HamCore Open Source Project",
-  "settings_aboutDescription": "An open-source Flutter client for HamCore LoRa mesh networking devices. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README.",
+  "settings_aboutDescription": "An open-source Flutter client for HamCore LoRa mesh networking devices. Built with substantial generative AI assistance (Anthropic Claude), human-directed and reviewed — see the project README. Transmitting requires a US amateur radio license.",
   "settings_aboutOpenMeteoAttribution": "LOS elevation data: Open-Meteo (CC BY 4.0)",
   "settings_infoName": "Name",
   "settings_infoId": "ID",
@@ -600,11 +599,11 @@
   "channels_channelIndexLabel": "Channel Index",
   "channels_channelName": "Channel Name",
   "channels_usePublicChannel": "Use Public Channel",
-  "channels_standardPublicPsk": "Standard public PSK",
-  "channels_pskHex": "PSK (Hex)",
-  "channels_generateRandomPsk": "Generate random PSK",
+  "channels_standardPublicPsk": "Standard public channel key",
+  "channels_pskHex": "Channel key (Hex)",
+  "channels_generateRandomPsk": "Generate random channel key",
   "channels_enterChannelName": "Please enter a channel name",
-  "channels_pskMustBe32Hex": "PSK must be 32 hex characters",
+  "channels_pskMustBe32Hex": "Channel key must be 32 hex characters",
   "channels_channelAdded": "Channel \"{name}\" added",
   "@channels_channelAdded": {
     "placeholders": {
@@ -996,7 +995,6 @@
   "map_room": "Room",
   "map_sensor": "Sensor",
   "map_pinDm": "Pin (DM)",
-  "map_pinPrivate": "Pin (Private)",
   "map_pinPublic": "Pin (Public)",
   "map_lastSeen": "Last Seen",
   "map_disconnectConfirm": "Are you sure you want to disconnect from this device?",
@@ -1018,7 +1016,7 @@
   "map_sendToChannel": "Send to channel",
   "map_noChannelsAvailable": "No channels available",
   "map_publicLocationShare": "Public location share",
-  "map_publicLocationShareConfirm": "You are about to share a location in {channelLabel}. This channel is public and anyone with the PSK can see it.",
+  "map_publicLocationShareConfirm": "You are about to share a location in {channelLabel}. Location pins are sent as channel messages and are readable by anyone over the air.",
   "@map_publicLocationShareConfirm": {
     "placeholders": {
       "channelLabel": {
@@ -1228,7 +1226,7 @@
   "login_password": "Password",
   "login_enterPassword": "Enter password",
   "login_savePassword": "Save password",
-  "login_savePasswordSubtitle": "Password will be stored securely on this device",
+  "login_savePasswordSubtitle": "Password will be stored on this device",
   "login_repeaterDescription": "Enter the repeater password for guest or admin access.",
   "login_roomDescription": "Enter the room password for guest or admin access.",
   "login_routing": "Routing",
@@ -1405,7 +1403,7 @@
   "repeater_guestAccess": "Guest Access",
   "repeater_guestAccessSubtitle": "Allow read-only guest access",
   "repeater_privacyMode": "Privacy Mode",
-  "repeater_privacyModeSubtitle": "Hide name/location in advertisements",
+  "repeater_privacyModeSubtitle": "Hide name/location in advertisements. Your callsign still identifies this station in every frame (Part 97).",
   "repeater_advertisementSettings": "Advertisement Settings",
   "repeater_localAdvertInterval": "Local Advertisement Interval",
   "repeater_localAdvertIntervalMinutes": "{minutes} minutes",
@@ -1425,7 +1423,6 @@
       }
     }
   },
-  "repeater_encryptedAdvertInterval": "Encrypted Advertisement Interval",
   "repeater_dangerZone": "Danger Zone",
   "repeater_rebootRepeater": "Reboot Repeater",
   "repeater_rebootRepeaterSubtitle": "Restart the repeater device",
@@ -2130,7 +2127,7 @@
       }
     }
   },
-  "community_regenerateSecret": "Regenerate Secret",
+  "community_regenerateSecret": "Regenerate Community Key",
   "community_regenerateSecretConfirm": "Regenerate the secret key for \"{name}\"? All members will need to scan the new QR code to continue communicating.",
   "@community_regenerateSecretConfirm": {
     "placeholders": {
@@ -2140,7 +2137,7 @@
     }
   },
   "community_regenerate": "Regenerate",
-  "community_secretRegenerated": "Secret regenerated for \"{name}\"",
+  "community_secretRegenerated": "Community key regenerated for \"{name}\"",
   "@community_secretRegenerated": {
     "placeholders": {
       "name": {
@@ -2148,7 +2145,7 @@
       }
     }
   },
-  "community_updateSecret": "Update Secret",
+  "community_updateSecret": "Update Community Key",
   "community_secretUpdated": "Secret updated for \"{name}\"",
   "@community_secretUpdated": {
     "placeholders": {
@@ -2157,7 +2154,7 @@
       }
     }
   },
-  "community_scanToUpdateSecret": "Scan the new QR code to update the secret for \"{name}\"",
+  "community_scanToUpdateSecret": "Scan the new QR code to update the community key for \"{name}\"",
   "@community_scanToUpdateSecret": {
     "placeholders": {
       "name": {
@@ -2171,7 +2168,7 @@
   "community_regularHashtag": "Regular Hashtag",
   "community_regularHashtagDesc": "Public hashtag (anyone can join)",
   "community_communityHashtag": "Community Hashtag",
-  "community_communityHashtagDesc": "Private to community members",
+  "community_communityHashtagDesc": "Scoped to community members — readable by anyone over the air",
   "community_forCommunity": "For {name}",
   "@community_forCommunity": {
     "placeholders": {
@@ -2882,5 +2879,8 @@
         "type": "String"
       }
     }
-  }
+  },
+  "settings_nodeNameCallsignHelper": "Must start with your callsign (e.g. W1AW or W1AW-2)",
+  "repeater_nameCallsignInvalid": "Repeater name must start with a callsign (e.g. W1AW-2)",
+  "repeater_frequencyOutOfBand": "Frequency must be in the 420-450 or 902-928 MHz ham bands"
 }

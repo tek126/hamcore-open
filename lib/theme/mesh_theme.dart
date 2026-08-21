@@ -27,31 +27,31 @@ class MeshPalette {
   static const signalDim = Color(0xFF16A34A);
 
   // Warn
-  static const warn = Color(0xFFF59E0B);
-  static const warnDim = Color(0xFFD97706);
-  static const warnBg = Color(0x1FF59E0B);
-  static const warnLine = Color(0x66F59E0B);
+  static const warn = Color(0xFFF97316);
+  static const warnDim = Color(0xFFEA580C);
+  static const warnBg = Color(0x1FF97316);
+  static const warnLine = Color(0x66F97316);
 
   // Alert
   static const alert = Color(0xFFEF4444);
   static const alertBg = Color(0x1FEF4444);
   static const alertLine = Color(0x66EF4444);
 
-  // Blue — primary map/app accent
-  static const blue = Color(0xFF0EA5E9);
-  static const blueDim = Color(0xFF0284C7);
-  static const blueBg = Color(0x290EA5E9);
-  static const blueLine = Color(0x800EA5E9);
+  // Amber — primary HamCore accent (matches the app icon and hamcore branding)
+  static const accent = Color(0xFFFFB300);
+  static const accentDim = Color(0xFFCC8F00);
+  static const accentBg = Color(0x29FFB300);
+  static const accentLine = Color(0x80FFB300);
 
   // Magenta
   static const magenta = Color(0xFFDE7FDB);
   static const magentaBg = Color(0x1CDE7FDB);
   static const magentaLine = Color(0x47DE7FDB);
 
-  // Me bubble (dusk blue)
-  static const me = Color(0xFF0C4A6E);
-  static const meBorder = Color(0xFF0369A1);
-  static const meInk = Color(0xFFF0F9FF);
+  // Me bubble (deep amber)
+  static const me = Color(0xFF4A3200);
+  static const meBorder = Color(0xFFB37E00);
+  static const meInk = Color(0xFFFFF6E5);
 
   // ── Light variant (used when user explicitly picks light theme)
   static const lightBg = Color(0xFFF4F6F8);
@@ -61,7 +61,7 @@ class MeshPalette {
   static const lightInk = Color(0xFF10161B);
   static const lightInk2 = Color(0xFF3C4853);
   static const lightInk3 = Color(0xFF69767F);
-  static const lightBlue = Color(0xFF2F6EA8);
+  static const lightAccent = Color(0xFF8F6400);
 }
 
 /// High-contrast semantic colors for UI rendered over variable map tiles.
@@ -163,9 +163,9 @@ class MeshTheme {
 
   static ThemeData dark() {
     const scheme = ColorScheme.dark(
-      primary: MeshPalette.blue,
-      onPrimary: Colors.white,
-      primaryContainer: Color(0xFF075985),
+      primary: MeshPalette.accent,
+      onPrimary: Color(0xFF0B1220),
+      primaryContainer: Color(0xFF6B4A00),
       onPrimaryContainer: Colors.white,
       secondary: MeshPalette.magenta,
       onSecondary: Colors.white,
@@ -193,17 +193,17 @@ class MeshTheme {
       scrim: Colors.black54,
       inverseSurface: MeshPalette.ink,
       onInverseSurface: MeshPalette.bg,
-      inversePrimary: MeshPalette.blueDim,
+      inversePrimary: MeshPalette.accentDim,
     );
     return _build(scheme, Brightness.dark);
   }
 
   static ThemeData light() {
     const scheme = ColorScheme.light(
-      primary: MeshPalette.lightBlue,
+      primary: MeshPalette.lightAccent,
       onPrimary: Colors.white,
-      primaryContainer: Color(0xFFD3E4F5),
-      onPrimaryContainer: Color(0xFF12354F),
+      primaryContainer: Color(0xFFF7E7C3),
+      onPrimaryContainer: Color(0xFF4A3200),
       secondary: Color(0xFF8C4A8A),
       onSecondary: Colors.white,
       secondaryContainer: Color(0xFFEFD6EE),

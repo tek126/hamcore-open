@@ -315,9 +315,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get device_quickSwitch => '빠른 전환';
 
   @override
-  String get device_meshcore => 'HamCore';
-
-  @override
   String get settings_title => '설정';
 
   @override
@@ -1169,7 +1166,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get channels_private => '사립';
+  String get channels_private => 'Keyed';
 
   @override
   String get channels_editChannel => '채널 편집';
@@ -1314,16 +1311,18 @@ class AppLocalizationsKo extends AppLocalizations {
   String get channels_sortUnread => '읽지 않음';
 
   @override
-  String get channels_createPrivateChannel => '개인 채널 만들기';
+  String get channels_createPrivateChannel => 'Create a Keyed Channel';
 
   @override
-  String get channels_createPrivateChannelDesc => '비밀 키로 암호화되어 있습니다.';
+  String get channels_createPrivateChannelDesc =>
+      'Members hold a shared key. Anyone can read the messages over the air (Part 97 — no encryption); only key holders can post into the channel.';
 
   @override
-  String get channels_joinPrivateChannel => '개인 채널에 참여하기';
+  String get channels_joinPrivateChannel => 'Join a Keyed Channel';
 
   @override
-  String get channels_joinPrivateChannelDesc => '비밀 키를 수동으로 입력합니다.';
+  String get channels_joinPrivateChannelDesc =>
+      'Manually enter the channel key.';
 
   @override
   String get channels_joinPublicChannel => '공개 채널에 참여하세요';
@@ -1841,9 +1840,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get map_pinDm => '핀 (DM)';
-
-  @override
-  String get map_pinPrivate => '개인 계정';
 
   @override
   String get map_pinPublic => '공개 (일반 공개)';
@@ -2483,9 +2479,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String repeater_floodAdvertIntervalHours(int hours) {
     return '$hours 시간';
   }
-
-  @override
-  String get repeater_encryptedAdvertInterval => '암호화된 광고 간격';
 
   @override
   String get repeater_dangerZone => '위험 구역';
@@ -4806,4 +4799,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String imageSend_minutesSecondsValue(String minutes, String seconds) {
     return '$minutes분 $seconds초';
   }
+
+  @override
+  String get settings_nodeNameCallsignHelper =>
+      'Must start with your callsign (e.g. W1AW or W1AW-2)';
+
+  @override
+  String get repeater_nameCallsignInvalid =>
+      'Repeater name must start with a callsign (e.g. W1AW-2)';
+
+  @override
+  String get repeater_frequencyOutOfBand =>
+      'Frequency must be in the 420-450 or 902-928 MHz ham bands';
 }

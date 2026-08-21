@@ -312,9 +312,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get device_quickSwitch => '快速切换';
 
   @override
-  String get device_meshcore => '网格核心';
-
-  @override
   String get settings_title => '设置';
 
   @override
@@ -1152,7 +1149,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get channels_private => '私有';
+  String get channels_private => 'Keyed';
 
   @override
   String get channels_editChannel => '编辑频道';
@@ -1297,16 +1294,18 @@ class AppLocalizationsZh extends AppLocalizations {
   String get channels_sortUnread => '未读';
 
   @override
-  String get channels_createPrivateChannel => '创建私有频道';
+  String get channels_createPrivateChannel => 'Create a Keyed Channel';
 
   @override
-  String get channels_createPrivateChannelDesc => '使用密钥保护。';
+  String get channels_createPrivateChannelDesc =>
+      'Members hold a shared key. Anyone can read the messages over the air (Part 97 — no encryption); only key holders can post into the channel.';
 
   @override
-  String get channels_joinPrivateChannel => '加入私有频道';
+  String get channels_joinPrivateChannel => 'Join a Keyed Channel';
 
   @override
-  String get channels_joinPrivateChannelDesc => '手动输入密钥。';
+  String get channels_joinPrivateChannelDesc =>
+      'Manually enter the channel key.';
 
   @override
   String get channels_joinPublicChannel => '加入公共频道';
@@ -1816,9 +1815,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get map_pinDm => '标记（私信）';
-
-  @override
-  String get map_pinPrivate => '私有';
 
   @override
   String get map_pinPublic => '公共';
@@ -2456,9 +2452,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String repeater_floodAdvertIntervalHours(int hours) {
     return '$hours 小时';
   }
-
-  @override
-  String get repeater_encryptedAdvertInterval => '加密广播间隔';
 
   @override
   String get repeater_dangerZone => '危险设置';
@@ -4689,4 +4682,16 @@ class AppLocalizationsZh extends AppLocalizations {
   String imageSend_minutesSecondsValue(String minutes, String seconds) {
     return '$minutes 分 $seconds 秒';
   }
+
+  @override
+  String get settings_nodeNameCallsignHelper =>
+      'Must start with your callsign (e.g. W1AW or W1AW-2)';
+
+  @override
+  String get repeater_nameCallsignInvalid =>
+      'Repeater name must start with a callsign (e.g. W1AW-2)';
+
+  @override
+  String get repeater_frequencyOutOfBand =>
+      'Frequency must be in the 420-450 or 902-928 MHz ham bands';
 }

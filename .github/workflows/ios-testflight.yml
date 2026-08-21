@@ -72,6 +72,26 @@ jobs:
             DEVELOPMENT_TEAM="$APPLE_TEAM_ID" \
             CODE_SIGN_STYLE=Automatic
 
+      # llamadart's prebuilt GemmaModelConstraintProvider ships with
+      # LC_BUILD_VERSION minos stamped to the SDK version (26.4) instead of a
+      # real deployment target -- its siblings from the same bundle are 13-16.4,
+      # so this is a packaging accident, not an API dependency. Apple rejects
+      # the upload (ITMS-90208) because it exceeds the app's 16.4 minimum.
+      # Rewrite the stamp to match the app; exportArchive re-signs afterwards.
+      - name: Patch GemmaModelConstraintProvider minimum OS stamp
+        run: |
+          APP="build/Runner.xcarchive/Products/Applications/Runner.app"
+          FW="$APP/Frameworks/GemmaModelConstraintProvider.framework/GemmaModelConstraintProvider"
+          if [ -f "$FW" ]; then
+            vtool -show-build "$FW" | grep -E "minos|sdk" || true
+            vtool -set-build-version ios 16.4 26.4 -replace -output "$FW" "$FW"
+            codesign --force --sign - "$(dirname "$FW")"
+            echo "patched:"
+            vtool -show-build "$FW" | grep -E "minos|sdk"
+          else
+            echo "framework not present; nothing to patch"
+          fi
+
       - name: Export IPA
         run: |
           cat > build/ExportOptions.plist <<EOF
